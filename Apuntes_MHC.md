@@ -55,3 +55,11 @@ Que los residuos tengan una cierta tendencia (un comportamiento lineal, por ejem
 **Se puede ocupar el paquete hydroGOF de R para ver las comparaciones gráficas de las series observadas y simuladas.**
 
 ## Clase 8.3.mp4
+
+Se hace un ejercicio práctico en esta clase. Es la Guía de modelación AIRGR, por lo que se programa en R.
+
+El método de Oudin para estimar la evapotranspiración toma sólo como variabe de entrada la temperatura. Si es un estudio estamos interesados en determinar la evapotranspiración, es recomendable utilizar etudios satelitales (como SSEBop).
+
+En la clase, Pilar nos muestra la diferencia entre ET de Hargreaves, ET de Ooudin y la precipitación. Se identifica que hay marcada diferencia entre ambas ET, lo que muestra que hay una gran incertidumbre en su determinación. La ET de Oudin es mucho menor, mientras que la de Hargreaves es mucho mayor. En ocasiones Hargreaves es incluso mayor a la precipitación, lo que indica que tampoco es un valor razonable.
+
+Comentario de Ignacio Toro: Parte de la incertidumbre de la estimación de la ET se captura en los parámetros del modelo. Con este cálculo de ET lo que se incorpora es la temperatura en la cuenca. Es necesario evaluar la sensibilidad de la temperatura en el modelo. Ante proyecciones, la temperatura puede cambair mucho y el modelo puede ser muy sensible a este cambio. Puede que tenga el doble o triple de ET en el futuro, y la etimación puede ser no muy buena debido a que la estimación puede ser muy sensible (o no) ante el cambio de la temperatura. Es bueno tener en mente la sensibilidad de la ET respecto a la T.
