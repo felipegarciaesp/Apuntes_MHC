@@ -69,3 +69,26 @@ A partir de acá en la Clase se implementa un Código para usar los Modelos Hidr
 # 9. Downscalling de GCMs
 ## Clase 9.1.mp4
 
+NetCDF: archivos que contienen los GCM y los contienen de manera grillada.
+Cada nodo de la grilla explica el clima dentro de su área de influencia.
+
+Al GCM le puede pasar que tiene una grilla demasiado gruesa, teniendo una amplia área de influencia. También le puede pasar que presente un sesgo consistente.
+
+Los datos observados pueden ser datos puntuales de una estación o datos provenientes de productos grillados. Ejemplos de datos grillados en Chile tenemos: CR2MET, o productos satelitales grillados como ERA.
+
+Downscaling, 2 grandes grupos: 
+    1. Dynamical
+    2. Statistical
+
+Dynamical usa un enfoque físico y se suelen llamar Regional Climate Models (RCM), porque son modelos de cambio climático en una región pequeñita. Producen resultados basándose en ecuaciones que mantienen consitencia de los procesos físicos.
+
+Statistical se divide en 3 grupos: 
+    1. de tipo Regresivo (regresiones): función matemática que busca la relación de corrección.
+    2. generadores de clima: busco generar con ecuaciones estadísticas series de clima que tengan todos los estadísticos de las series locales.
+    3. asociados a patrones de clima: simular, por ejemplo, años NIÑO y años NIÑA y simulo estos años pasando de una fase a la otra dependiendo de algunas condiciones. Este metodo va de la mano con los generadores de clima.
+
+Desventajas de Statistical:
+    1. Relación entre el predictor y lo que se quiere predecir puede ser no estacionario: Pueden haber cambios en el tiempo y el metodo puede no ser tan bueno para captar estos cambios en el tiempo.
+    2. No se tiene retroalimentación del clima: por ejemplo si en cierta zona la tempertura aumenta y esto aumenta derretimiento de nieve y si esto va a producir un cambio de ciertas condiciones fisicas que va a producir otro efecto climático, este método no va a captar esto, mientras que un Modelo Regional sí podría captarlo (dependiendo de cómo esté construido).
+
+El Downscaling Estadístico busca alguna relación estadística entre el GCM y el clima local.
