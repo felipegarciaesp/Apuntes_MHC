@@ -65,3 +65,7 @@ En la clase, Pilar nos muestra la diferencia entre ET de Hargreaves, ET de Ooudi
 Comentario de Ignacio Toro: Parte de la incertidumbre de la estimación de la ET se captura en los parámetros del modelo. Con este cálculo de ET lo que se incorpora es la temperatura en la cuenca. Es necesario evaluar la sensibilidad de la temperatura en el modelo. Ante proyecciones, la temperatura puede cambair mucho y el modelo puede ser muy sensible a este cambio. Puede que tenga el doble o triple de ET en el futuro, y la etimación puede ser no muy buena debido a que la estimación puede ser muy sensible (o no) ante el cambio de la temperatura. Es bueno tener en mente la sensibilidad de la ET respecto a la T.
 
 A partir de acá en la Clase se implementa un Código para usar los Modelos Hidrológicos. Por el momento me saltaré esta parte para hacer cosas más de teoría. Queda pendiente retomar.
+
+# 9. Downscalling de GCMs
+## Clase 9.1.mp4
+
