@@ -114,3 +114,7 @@ La distribución Gamma es una distribución estrictamente no negativa.
 **Delta Change**
 
 - Consiste en extraer las tasas de cambio de variables climáticas del GCM y generar clima con dichas tasas de cambio.
+
+## Clase 9.4
+
+Quedé en 00:05:00
