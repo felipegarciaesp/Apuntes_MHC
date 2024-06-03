@@ -92,3 +92,22 @@ Desventajas de Statistical:
     2. No se tiene retroalimentación del clima: por ejemplo si en cierta zona la tempertura aumenta y esto aumenta derretimiento de nieve y si esto va a producir un cambio de ciertas condiciones fisicas que va a producir otro efecto climático, este método no va a captar esto, mientras que un Modelo Regional sí podría captarlo (dependiendo de cómo esté construido).
 
 El Downscaling Estadístico busca alguna relación estadística entre el GCM y el clima local.
+
+## Clase 9.2.mp4
+
+Los Downscaling de tipo Regresivo buscan una función que quite el sesgo de las proyecciones de los GCM.
+
+**Quantile Mapping Bias Correction**
+
+Es un método de corrección de sesgo que toma como supuesto corregir los percentiles de la curva acumulada del GCM con respecto a la histórica.
+
+Cada dato de clima del GCM se pasa por la curva de Función de Distribución Acumulada (CDF) del GCM para calcular su probabilidad y se usa esa probabilidad en la CDF del Histórico para calcular el clima sin sesgo.
+
+La distribución Gamma es una distribución estrictamente no negativa.
+
+- Este método se usa (originalmente y comúnmente) a nivel mensual.
+- Se ha utilizado también a nivel diario y se puede usar a nivel anual.
+- Para el caso de **cuencas semi-áridas (o período seco)** puede que no funcione bien a **nivel mensual en las precipitaciones.** (en años sin precipitaciones podría haber problemas para implementar el método).
+
+## Clase 9.3
+
