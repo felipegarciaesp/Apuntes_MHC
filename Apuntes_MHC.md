@@ -117,4 +117,18 @@ La distribución Gamma es una distribución estrictamente no negativa.
 
 ## Clase 9.4
 
-Quedé en 00:05:00
+La fórmula del **Delta Change** se estima con los datos del GCM. Ojo ahí! Es sólo con los datos del GCM.
+Una vez que tengamos el delta de cambio de Precipitación y Temperatura, esto lo aplicamos a nuestros datos históricos observados.
+Es importante recalcar que con el Delta Change se está calculando el cambio en el clima para una ventana de tiempo (30 años usualmente), no se está obteniendo una serie continua.
+
+**Pregunta:** el Delta Change se aplica a los datos de GCM crudos y escalados?
+
+La función **Quantile Mapping** usa datos observados y del GCM. Es recomendable partir entendiendo Quantile Mapping para entender los demás. Para el Balance Hídrico Nacional se ocupó el Quantile Delta Mapping.
+
+Con el Delta Change yo obtengo una tasa de cambio en una ventana temporal que se lo aplico a los datos históricos. Con funciones de escalamiento (tipo Quantile Mapping) lo que hago es corregir el sesgo de una serie de GCM.
+
+Pregunta: No entendí lo que dijeron respecto a los problemas de QM. La serie del GCM va cambiando en el tiempo y puede haber una serie de precipitación que quede fuera de la distribución. Averiguar sobre los problemas de Quantile Mapping.
+
+Delta Change es bueno para ver disponibilidades.
+
+Quedé en 00:32:00
