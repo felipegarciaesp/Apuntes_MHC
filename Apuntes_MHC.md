@@ -1,5 +1,38 @@
 # 7. Impactos del Cambio Climático
 
+## Clase 7.1
+### Corrección de sesgo - Bias Correction
+
+Coupled Model Intercomparison Project: Coordina grupos de modeladores climáticos para hacer ejercicios en conjunto.
+CMIP5: período histórico hasta el 2005.
+CMIP5: período histórico hasta el 2014.
+
+**Problemas con los modelos de escalamiento:**
+1) Problemas en la representación de precipitación en climas semiáridos: meses con precipitación nula. Los métodos estadísticos se empiezan a complicar con poca precipitación.
+2) Problemas en la representación de problemas orográficos.
+3) Problemas en la representación de procesos locales.
+
+- Lo mejor para solucionar estos problemas es utilizar modelos regionales de simulación climática (escalamiento dinámico) acoplados con modelos estocásticos para generar series de tiempo.
+**Los modelos regionales son muy caros y los modelos estocásticos son muy complejos. Por eso se opta por el escalamiento estadístico principalmente**
+
+### Modelo Hidrológicos
+
+Una vez que tenemos las series escaladas, pasamos al modelo hidrológico.
+
+En el modelo hidrológico, obtenemos el caudal por medio de la precipitación, temperatura y componentes de la cuenca:
+
+$$Q = f(T, P, \theta)$$
+
+Lo primero es calibrar el modelo hidrológico.
+Se pueden obtener proyecciones de escorrentía corriendo el modelo hidrológico utilizando las proyecciones de cada GCMs.
+
+**Condiciones no estacionarias:** se refieren a cambios en las características hidrológicas a lo largo del tiempo, esto significa que las propiedades estadísticas de variables como la precipitación, el caudal y la temperatura no permanecen constantes.
+
+## Clase 7.2
+
+**NOTA IMPORTANTE:** Los GCM a **escala diaria**  sí tienen diferencias entre modelos respecto a como consideran el calendario. Algunos modelos consideran que todos los meses son de 30 dás (años de 360 días). En general la escala mensual funciona bien, pero otros modelos consideran años bisiestos y otros no. **Hay que tener cuidado.**
+
+Si bien hay cierta homogeneidad dentro de los modelos, hay salvedades. De partida la grilla no es la misma para todos los modelos.
 
 
 
