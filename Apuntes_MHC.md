@@ -30,13 +30,25 @@ Se pueden obtener proyecciones de escorrentía corriendo el modelo hidrológico 
 
 ## Clase 7.2
 
-**NOTA IMPORTANTE:** Los GCM a **escala diaria**  sí tienen diferencias entre modelos respecto a como consideran el calendario. Algunos modelos consideran que todos los meses son de 30 dás (años de 360 días). En general la escala mensual funciona bien, pero otros modelos consideran años bisiestos y otros no. **Hay que tener cuidado.**
-
 Si bien hay cierta homogeneidad dentro de los modelos, hay salvedades. De partida la grilla no es la misma para todos los modelos.
 
-Para los GCMs, el cero en términos de longitud parte en Greenwich y se da la vuelta hacia el Este hasta llegar a Greenwich nuevamente, donde llega a 360:
+Para los GCMs, el cero en términos de longitud parte en Greenwich y se da la vuelta hacia el Este hasta llegar a Greenwich nuevamente, donde llega a 360. La latitud tiene valores negativos y positivos dependiendo de la posición respecto al ecuador.
 
 ![Coordenadas modelos GCM](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Coordenadas%20GCM.jpg)
+
+La imagen anterior es para los GCM. Esto puede cambiar para otros productos, como CR2MET. Hay que abrir el archivo y hay que ver como están estrucutrados los datos: como está la latitud, la longitud, el tiempo. **Esto es de las primeras cosas que uno tiene que hacer.**
+
+La gracia de los GCM es que los centros se pusieron de acuerdo en las coordenadas, se llegó a cierta convención. Pero otros datos pueden tener otros criterios.
+Sin embargo, para los GCM igual se pueden presentar algunas particularidades como la que se menciona en la siguiente **Nota Importante.**
+
+**NOTA IMPORTANTE:** Los GCM a **escala diaria**  sí tienen diferencias entre modelos respecto a como consideran el calendario. Algunos modelos consideran que todos los meses son de 30 dás (años de 360 días). En general la escala mensual funciona bien, pero otros modelos consideran años bisiestos y otros no. **Hay que tener cuidado.**
+
+Las grillas de los modelos GCM no son las mismas. También puede pasar que un modelo tenga 10 corridas y otro tenga 1 sola para las proyecciones futuras. Estas cosas hay que revisarlas para cada modelo.
+
+**Pregunta:** El GCM ACCESS-CM2 tiene un archivo para el período histórico y otro archivo para el período futuro. Serían dos archivos para este GCM. No todos son así? Hay algunos que tienen un archivo netcdf por año?
+
+
+
 
 
 # 8. Uso de R para CC
