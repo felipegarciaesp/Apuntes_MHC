@@ -34,6 +34,9 @@ Se pueden obtener proyecciones de escorrentía corriendo el modelo hidrológico 
 
 Si bien hay cierta homogeneidad dentro de los modelos, hay salvedades. De partida la grilla no es la misma para todos los modelos.
 
+Para los GCMs, el cero en términos de longitud parte en Greenwich y se da la vuelta hacia el Este hasta llegar a Greenwich nuevamente, donde llega a 360:
+
+![Coordenadas modelos GCM](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Coordenadas%20GCM.jpg)
 
 
 # 8. Uso de R para CC
