@@ -39,7 +39,7 @@ Para los GCMs, el cero en términos de longitud parte en Greenwich y se da la vu
 La imagen anterior es para los GCM. Esto puede cambiar para otros productos, como CR2MET. Hay que abrir el archivo y hay que ver como están estrucutrados los datos: como está la latitud, la longitud, el tiempo. **Esto es de las primeras cosas que uno tiene que hacer.**
 
 La gracia de los GCM es que los centros se pusieron de acuerdo en las coordenadas, se llegó a cierta convención. Pero otros datos pueden tener otros criterios.
-Sin embargo, para los GCM igual se pueden presentar algunas particularidades como la que se menciona en la siguiente **Nota Importante.**
+Sin embargo, para los GCM igual se pueden presentar algunas particularidades como la que se menciona en la **Nota Importante.**
 
 Las grillas de los modelos GCM no son las mismas. También puede pasar que un modelo tenga 10 corridas y otro tenga 1 sola para las proyecciones futuras. Estas cosas hay que revisarlas para cada modelo.
 
@@ -59,7 +59,6 @@ Es importante que abras en netcdf, explores la información dentro del archivo y
 > - El GCM ACCESS-CM2 tiene un archivo para el período histórico y otro archivo para el período futuro. Serían dos archivos para este GCM. No todos son así? Hay algunos que tienen un archivo netcdf por año?
 > - Si los GCM tienen datos mensuales de precipitación, esto es la precipitación total mensual?
 > - A nivel mensual hace sentido interpolar espacialmente en precipitaciones, pero a nivel diario podríamos estar sobreestimando el número de días de lluvia (comentario de Cristian Chadwick en 28:37). **¿Porqué esto es así? De partida, ¿porque a nivel mensual hace sentido la interpolación espacial? y porque a nivel diario estaríamos sobreestimando los días de lluvia?**
-
 
 ## Clase 7.3
 
@@ -91,7 +90,32 @@ Cristian Chadwick comenta que hay problemas con los métodos de escalamiento est
 
 # 8. Uso de R para CC
 
-## Clase 8.2.mp4
+## Clase 8.1
+
+Más que los valores de precipitación futura, nos interesa saber cuánta agua disponible habrá en una cuenca a futuro.
+
+airGR: Modelo de Precipitacion-Escorrentía implementado en R.
+
+Los modelos hidrológicos agergados no se pueden utilizar para resolver cualquier tipo de problema, solo algunos en particular.
+
+Las proyecciones hidrológicas requiere de 4 pasaos principales:
+1) Procesamiento de datos observados (paso típico de cualquier análisis hidrológico) -> Cuál es la Pp histórica? cuál es la temperatura? cuál es el caudal? cual es el régimen hidrológico?
+2) Procesamiento de datos de proyecciones climáticas -> GCMs (CMIP5, CMIP6).
+3) Escalamiento de los datos de GCM a la escala local -> Modelos estadísticos o dinámicos.
+4) Obtención de las proyecciones de escorentía mediante un modelo -> Se utiliza Modelo Hidrológico que sepamos que simula bien.
+
+El Modelo Hidrológico es una representación matemática que busca representar el balance hídrico en una cuenca.
+
+Los modelos de airGR han dmeostrado ser buenos modelos para muchas cuencas alrededor del mundo, y en Chile se han obtenido muy buenos resultados para alrededor de 87 cuencas.
+
+![Caracteristicas de modelos hidrologicos incluidos en airGR](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/paquete%20airGR.jpg)
+
+>NOTAS IMPORTANTES:
+> - CAMELS y CR2MET tienen datos históricos promedio de distintas cuencas desde el año 2019. Para cuencas que no estén en CAMELS o CR2MET se pueden ocupar las tipicas técnicas de la hidrología como isoyetas u ocupar algunas estaciones de pp o tas que luego se pueden extrapolar a la supeficie de la cuenca.
+
+
+
+## Clase 8.2
 
 Típicamente se divide la serie de tiempo en 2/3 para la calibración y 1/3 para la validación. **Sin embargo no hay una regla.**
 
