@@ -112,7 +112,7 @@ Los modelos de airGR han dmeostrado ser buenos modelos para muchas cuencas alred
 
 Los Free param. son los parámetros a calibrar para cada modelo.
 
-
+ACÁ QUEDÉ 21/11/2024. MINUTO 17 DE LA CLASE.
 
 >NOTAS IMPORTANTES:
 > - CAMELS y CR2MET tienen datos históricos promedio de distintas cuencas desde el año 2019. Para cuencas que no estén en CAMELS o CR2MET se pueden ocupar las tipicas técnicas de la hidrología como isoyetas u ocupar algunas estaciones de pp o tas que luego se pueden extrapolar a la supeficie de la cuenca.
