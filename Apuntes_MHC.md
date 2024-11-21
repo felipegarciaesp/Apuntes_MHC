@@ -41,13 +41,51 @@ La imagen anterior es para los GCM. Esto puede cambiar para otros productos, com
 La gracia de los GCM es que los centros se pusieron de acuerdo en las coordenadas, se llegó a cierta convención. Pero otros datos pueden tener otros criterios.
 Sin embargo, para los GCM igual se pueden presentar algunas particularidades como la que se menciona en la siguiente **Nota Importante.**
 
-**NOTA IMPORTANTE:** Los GCM a **escala diaria**  sí tienen diferencias entre modelos respecto a como consideran el calendario. Algunos modelos consideran que todos los meses son de 30 dás (años de 360 días). En general la escala mensual funciona bien, pero otros modelos consideran años bisiestos y otros no. **Hay que tener cuidado.**
-
 Las grillas de los modelos GCM no son las mismas. También puede pasar que un modelo tenga 10 corridas y otro tenga 1 sola para las proyecciones futuras. Estas cosas hay que revisarlas para cada modelo.
 
-**Pregunta:** El GCM ACCESS-CM2 tiene un archivo para el período histórico y otro archivo para el período futuro. Serían dos archivos para este GCM. No todos son así? Hay algunos que tienen un archivo netcdf por año?
+Respecto a la grilla desde la cual descargar data de los GCM, se puede hacer dos dos formas:
+1) Elegir el nodo más cercano.
+2) Hacer una interpolación espacial de los nodos más cercanos al punto a evaluar.
+
+Hay que tener en cuenta que las grillas son super gruesas, por lo que hacer una interpolación espacial puede no ser tan conveniente. Si por ejemplo estamos haciendo un estudio en el valle central de Chile, al hacer una interpolación espacial vamos a tomar grillas que están en la costa, por lo que estaremos tomando data que no es característico del clima que queremos estudiar.
+Con la interpolación espacial podríamos estar tomando datos que no son característicos de nuestra área de estudio y estar tomando datos que no nos hacen sentido.
+
+Es importante que abras en netcdf, explores la información dentro del archivo y luego cierres el netcdf.
+
+>NOTAS IMPORTANTES:
+> - Los GCM a **escala diaria** sí tienen diferencias entre modelos respecto a como consideran el calendario. Algunos modelos consideran que todos los meses son de 30 dás (años de 360 días). En general la escala mensual funciona bien, pero otros modelos consideran años bisiestos y otros no. **Hay que tener cuidado.**
+
+>Preguntas:
+> - El GCM ACCESS-CM2 tiene un archivo para el período histórico y otro archivo para el período futuro. Serían dos archivos para este GCM. No todos son así? Hay algunos que tienen un archivo netcdf por año?
+> - Si los GCM tienen datos mensuales de precipitación, esto es la precipitación total mensual?
+> - A nivel mensual hace sentido interpolar espacialmente en precipitaciones, pero a nivel diario podríamos estar sobreestimando el número de días de lluvia (comentario de Cristian Chadwick en 28:37). **¿Porqué esto es así? De partida, ¿porque a nivel mensual hace sentido la interpolación espacial? y porque a nivel diario estaríamos sobreestimando los días de lluvia?**
 
 
+## Clase 7.3
+
+Para que R pueda leer bien un archivo, es super importante que haya solo un punto (".") en el nombre del archivo y que esté justo antes del formato.
+En el archivo netcdf de CR2MET se puede ver que la data de precipitación ya viene en unidades de mm, por lo que no es necesario hacer una conversión.
+
+En la siguiente imagen se ve como una cuenca en estudio es abarcado por varias grillas. Se ve que el nodo de arriba a la izquierda no está en el área de influencia de la cuenca, pero el resto estaría explicando el clima en ciertas partes de la cuenca.
+A cada una de esas áreas se le asignarían los valores asociados a la información del nodo al centro de cada grilla. El valor promedio para la cuenca (ya sea precipitación, temepratura, etc), sería el promedio ponderado de cada grilla.
+
+![Nodos de las grillas de GCM](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Nodos%20Grillas.jpg)
+
+En la siguiente imagen se ve como sería el cálculo de la precipitación promedio para la Cuenca de Quilimarí.
+Si se hace este promedio ponderado a nivel mensual, estaría bien. 
+Sin embargo, a nivel diario habría que tener cuidado: uno podría obtener el promedio diario, pero tienes que considerar que en ocasiones algunas partes de la cuenca estarán con lluvia y otras no. Se estaría promediando todo esto espacialmente, pero hay que ver bien como manejar los datos de acuerdo al proceso físico que estás buscando. Tienes que evaluar si te sirve el promedio de la cuenca o no.
+
+![Nodos de las grillas de GCM](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Cuenca%20Quilimari.jpg)
+
+Cristian Chadwick comenta que hay problemas con los métodos de escalamiento estadístico cuando hay muchos valores nulos, lo cual es muy común en varias zonas de Chile. Menciona otras maneras de hacer el escalamiento, como trabajar los datos a escalas más gruesas (por temporadas por ejemplo) y después desagregar (hacer corrección de sesgo a nivel anual y despues desagregar a nivel mensual o diario, hay método matemáticos para esto). La otra manera es reemplazar los valores 0 por otro valor muy pequeño, entre 0 y 0.1, lo cual te arregla el problema matemático y podría servir para hacer el escalamiento estadístico (**ojo que recuerdo que me mencionaron que este truco en realidad no iba a servir, pero es lo que recuerdo, no guardé la nota. Corroborar con alguien más esto**)
+
+>NOTAS IMPORTANTES:
+> - Los archivos netcdf también son ráster y aplican los mismos comandos que aplican para los raster.
+> - Meteorológicamente si yo tengo una Pp menor a 1 mm, se considera igual a 0 mm. Pero matemáticamente esto es un valor y podría servirme para ajustar a una distribución.
+> - Cuando tienes muchos valores 0, se te produce un problema para hacer el escalamiento. Se puede hacer, pero es más desafiante.
+
+>Preguntas:
+> - Hay métodos matemáticos para desagregar datos: pasar de escala anual a mensual o diario. ¿Cuáles son estos métodos?
 
 
 
