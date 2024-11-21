@@ -94,7 +94,7 @@ Cristian Chadwick comenta que hay problemas con los métodos de escalamiento est
 
 Más que los valores de precipitación futura, nos interesa saber cuánta agua disponible habrá en una cuenca a futuro.
 
-airGR: Modelo de Precipitacion-Escorrentía implementado en R.
+airGR: Modelo de Precipitacion-Escorrentía implementado en R, modelos de tipo agregado.
 
 Los modelos hidrológicos agergados no se pueden utilizar para resolver cualquier tipo de problema, solo algunos en particular.
 
@@ -110,9 +110,13 @@ Los modelos de airGR han dmeostrado ser buenos modelos para muchas cuencas alred
 
 ![Caracteristicas de modelos hidrologicos incluidos en airGR](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/paquete%20airGR.jpg)
 
+Los Free param. son los parámetros a calibrar para cada modelo.
+
+
+
 >NOTAS IMPORTANTES:
 > - CAMELS y CR2MET tienen datos históricos promedio de distintas cuencas desde el año 2019. Para cuencas que no estén en CAMELS o CR2MET se pueden ocupar las tipicas técnicas de la hidrología como isoyetas u ocupar algunas estaciones de pp o tas que luego se pueden extrapolar a la supeficie de la cuenca.
-
+> - Según Reed et al. (2004), es más común encontrar modelos de tipo agregados con mejores resultados en comparación con modelos de tipo distribuido. Sin embargo, esto se debe a que se está evaluando netamente el proceso de precipitación-escorrentía.
 
 
 ## Clase 8.2
