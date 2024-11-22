@@ -140,6 +140,8 @@ Se refire a mas parsimonioso cuando tiene menos parámetros que calibrar.
 
 ## Clase 8.2
 
+Si quisieramos saber como va a cambiar la respuesta de la cuenca (escorrentía) frente a, por ejemplo, un cambio en el tipo de suelo, necesitariamos evaluarlo con un modelo de tipo distribuido o semi-distribuido. Sin emabrgo, muchas veces vamos a querer saber como va a responder la cuenca ante un evento de precipitación, por lo que un modelo de tipo agregado estaría bien.
+
 Típicamente se divide la serie de tiempo en 2/3 para la calibración y 1/3 para la validación. **Sin embargo no hay una regla.**
 
 Considerando los cambios de las series hidrometeorológicas durante las últimas décadas, se recomienda calibrar con los últimos años y validar con los primeros años de registro.
