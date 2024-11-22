@@ -125,7 +125,7 @@ Se trabaja con el modelo airGR GR2M, que tiene 2 parámetros a calibrar:
 
 X5 es el parámetro que se hace cargo cuando hay problemas con los datos de entrada. Por ejemplo, si al calibrar el código en R (o en cualquier otro lenguaje) se dá cuenta que la cantidad de preciptación ingresada no permite acercarse a los valores de caudal observado (precipitación subestimada), entonces en este parámetro se va a reflejar una entrada de agua adicional que debiese haber. Lo mismo ocurre para el caso contrario, en donde la precipitación ingresada simula valores de caudal por sobre lo observado.
 
-> Como se indicó anteriormente, el modelo airGR GR2M ha demostrado buenos resultados en Chile. Pero para cuencas nivopluviales probar con el modelo anual (airGR GR1A) o con el módulo CemaNeige (https://odelaigue.github.io/airGR/)
+> Como se indicó anteriormente, el modelo airGR GR2M ha demostrado buenos resultados en Chile. Pero para cuencas nivopluviales probar con el modelo anual (airGR GR1A) o con el módulo CemaNeige (https://hydrogr.github.io/airGR/)
 
 >NOTAS IMPORTANTES:
 > - CAMELS y CR2MET tienen datos históricos promedio de distintas cuencas desde el año 2019. Para cuencas que no estén en CAMELS o CR2MET se pueden ocupar las tipicas técnicas de la hidrología como isoyetas u ocupar algunas estaciones de pp o tas que luego se pueden extrapolar a la supeficie de la cuenca.
