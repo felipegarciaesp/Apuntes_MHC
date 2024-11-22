@@ -112,12 +112,31 @@ Los modelos de airGR han dmeostrado ser buenos modelos para muchas cuencas alred
 
 Los Free param. son los parámetros a calibrar para cada modelo.
 
-ACÁ QUEDÉ 21/11/2024. MINUTO 17 DE LA CLASE.
+En la siguiente imagen se ve un esquema de un modelo de tipo agregado. 
+En la imagen se utilizan datos observados de ET, Pp y Caudal, promediados para la cuenca completa. Los datos observados de caudal son utilizados para calibrar/comparar con las simulaciones.
+Een este caso, la Pp y la ET serían las **forzantes** del modelo.
+
+![Esquema de Modelo Agregado](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Esquema%20Modelo%20Agregado.jpg)
+
+Se trabaja con el modelo airGR GR2M, que tiene 2 parámetros a calibrar:
+
+1) X1: Es el tamaño de almacenamiento de una cuenca (Production store).
+2) X5: Es un parámetro que representa el intercambio en una cuenca (Routing store).
+
+X5 es el parámetro que se hace cargo cuando hay problemas con los datos de entrada. Por ejemplo, si al calibrar el código en R (o en cualquier otro lenguaje) se dá cuenta que la cantidad de preciptación ingresada no permite acercarse a los valores de caudal observado (precipitación subestimada), entonces en este parámetro se va a reflejar una entrada de agua adicional que debiese haber. Lo mismo ocurre para el caso contrario, en donde la precipitación ingresada simula valores de caudal por sobre lo observado.
+
+> Como se indicó anteriormente, el modelo airGR GR2M ha demostrado buenos resultados en Chile. Pero para cuencas nivopluviales probar con el modelo anual (airGR GR1A) o con el módulo CemaNeige (https://odelaigue.github.io/airGR/)
 
 >NOTAS IMPORTANTES:
 > - CAMELS y CR2MET tienen datos históricos promedio de distintas cuencas desde el año 2019. Para cuencas que no estén en CAMELS o CR2MET se pueden ocupar las tipicas técnicas de la hidrología como isoyetas u ocupar algunas estaciones de pp o tas que luego se pueden extrapolar a la supeficie de la cuenca.
 > - Según Reed et al. (2004), es más común encontrar modelos de tipo agregados con mejores resultados en comparación con modelos de tipo distribuido. Sin embargo, esto se debe a que se está evaluando netamente el proceso de precipitación-escorrentía.
 
+Los modelos de airGR son de baja complejidad, ya que buscan los otros procesos físicos propios de una cuenca (fuera de precipitación-escorrentía) quedan promediadas dentro del modelo.
+
+El **modelo PERM** es otro modelo del tipo agregado. Permite representar la componente de derretimiento de nieve (ventaja respecto a airGR), por lo que se puede utilizar para cuencas nivales. Pero airGR es más parsimonioso para cuencas pluviales.
+Este modelo tiene mejores resultados en cuencas pluvio-nivales, pero se tienen que calibrar 5 parámetros y no está implementado en R.
+
+Se refire a mas parsimonioso cuando tiene menos parámetros que calibrar.
 
 ## Clase 8.2
 
