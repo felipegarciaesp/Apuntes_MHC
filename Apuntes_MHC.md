@@ -146,18 +146,31 @@ Los productos de re-análisis (como ERA-INTERIM) pueden ser usados como datos ob
 
 La evapotranspiración es un tema que genera incertidumbre en los modelos hidrológicos. Si queremos un modelo que tenga bien identificada la ET, podemos utilizar estimacione satelitales de la ET para tener valores realistas (SSEBop, por ejemplo.)
 
-Típicamente se divide la serie de tiempo en 2/3 para la calibración y 1/3 para la validación. **Sin embargo no hay una regla.**
+**Calibración:** Período en que se calibran o calculan los parámetros del modelo para simular caudales.
+**Validación:** Período en que se utiliza el modelo calibrado y se comparan las simulaciones con datos de caudal observado. Es un período que no se utiliza en calibración.
 
-Considerando los cambios de las series hidrometeorológicas durante las últimas décadas, se recomienda calibrar con los últimos años y validar con los primeros años de registro.
+En la calibración buscamos que el modelo aprenda de los datos observados. En la validación verificamos que tan bueno fue este aprendizaje, comparando los resultados con datos que el modelo no "vió" en el período de calibración.
+El desempeño del modelo se evalúa para ambos períodos: calibraciín y validación.
+
+Como hidrólogo siempre debo preguntarme qué es lo que quiero lograr con el modelo que estoy calibrando, que quiero simular? quiero simular condiciones más secas? Entonces quizás me conviene calibrar con los datos más secos.
 
 Para el caso de AIRGR GR2M, los parámetros de calibración son X1 (almacenamiento máximo) y X5 (parámetro de intercambio, o de recesión). Normalmente, X5 < X1, pero hay casos en los que es mayor, esto es porque el modelo está recibiendo algún tipo de ingreso adicional.
 
+Normalmente se cumple que X1 > X5.
+
 **Si al calibrar un modelo resulta que la precipitación es menor que la escorentía, se debe probablemente a que hay un error en las mediciones de la precipitación.** En el ejemplo expuesto por Pilar, indica que el modelo ha corrido bien a pesar de este error debido a que el parámetro X5 tomó un valor que hizo posible la calibración aceptable (el modelo interpreta que debe recibir un ingreso adicional, por lo que X5 > X1).
+
+X1 puede ir de 0 a 5000. Este último es un valor elevado, para cuencas con lagos o aportes subterraneos.
+X5 puede ir entre -1 y 2.
 
 El modelo PERM, por ejemplo, tiene 5 parámetros a calibrar.
 
+Una vez realizada la **calibración**, procedemos con la **validación**.
+
 Como evaluamos si el modelo lo está haciendo bien?
     1. Coeficiente de determinación r^2: busca el grado de linealidad entre los datos simulados y observados. Igual a 1 significa que la linealidad es perfecta. Sin embargo, no es capaz de captar un sesgo consistente entre dos series (Es decir, si al simular una escorrentía linealmente representa bien los datos observados, tendremos un r^2 cercano a uno. Pero si los valores son consistentemente superior o inferiores a los observados, entonces el modelo está sobre-estimando o sub-estimando, respectivamente. Esto no nos va a servir. Para corregir esto s eocupa el próximo método) Este método es análogo al que uno hace en Excel para determinar el coeficiente de correlación en un gráfico, sin hacerlo pasar por 0. En caso de hacerlo pasar por 0, se está agregando el sesgo y sería análogo al siguiente método.
+    ![Coeficiente de determinación r^2](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/R%20cuadrado.jpg)
+
 
     2. Coeficiente de determinación r^2 corregido por la pendiente b: es calcular el r^2 multiplicado por una pendiente.
 
@@ -200,7 +213,8 @@ Que los residuos tengan una cierta tendencia (un comportamiento lineal, por ejem
 
 >NOTAS IMPORTANTES:
 > - No es recomendable utilizar la ET de Oudin para tomar alguna decisión o algún plan de riego. Es mejor utilizar datos mas precisos en estos casos (como SSEBop).
-
+> - Típicamente se divide la serie de tiempo en 2/3 para la calibración y 1/3 para la validación. **Sin embargo no hay una regla, va a depender del caso**
+> - Considerando los cambios de las series hidrometeorológicas durante las últimas décadas, se recomienda calibrar con los últimos años y validar con los primeros años de registro.
 
 ## Clase 8.3.mp4
 
