@@ -144,6 +144,8 @@ Si quisieramos saber como va a cambiar la respuesta de la cuenca (escorrentía) 
 
 Los productos de re-análisis (como ERA-INTERIM) pueden ser usados como datos observados.
 
+La evapotranspiración es un tema que genera incertidumbre en los modelos hidrológicos. Si queremos un modelo que tenga bien identificada la ET, podemos utilizar estimacione satelitales de la ET para tener valores realistas (SSEBop, por ejemplo.)
+
 Típicamente se divide la serie de tiempo en 2/3 para la calibración y 1/3 para la validación. **Sin embargo no hay una regla.**
 
 Considerando los cambios de las series hidrometeorológicas durante las últimas décadas, se recomienda calibrar con los últimos años y validar con los primeros años de registro.
@@ -195,6 +197,10 @@ Se espera que los residuos de los modelos hidrológicos cumplan con las siguient
 Que los residuos tengan una cierta tendencia (un comportamiento lineal, por ejemplo) significa que el modelo no lo está haciendo bien. Significa que hay una estructura de los datos que no está siendo capturada y que está quedando en los resuduos. Como hay una estructura que no está siendo capturada, seguramente tendremos que cambiar de modelo que sí capture esta estructura.
 
 **Se puede ocupar el paquete hydroGOF de R para ver las comparaciones gráficas de las series observadas y simuladas.**
+
+>NOTAS IMPORTANTES:
+> - No es recomendable utilizar la ET de Oudin para tomar alguna decisión o algún plan de riego. Es mejor utilizar datos mas precisos en estos casos (como SSEBop).
+
 
 ## Clase 8.3.mp4
 
