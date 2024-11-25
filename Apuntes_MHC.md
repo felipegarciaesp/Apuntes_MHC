@@ -167,7 +167,8 @@ El modelo PERM, por ejemplo, tiene 5 parámetros a calibrar.
 
 Una vez realizada la **calibración**, procedemos con la **validación**.
 
-Como evaluamos si el modelo lo está haciendo bien?
+Como evaluamos si el modelo lo está haciendo bien?  
+
     1. Coeficiente de determinación r^2: busca el grado de linealidad entre los datos simulados y observados. Igual a 1 significa que la linealidad es perfecta. Sin embargo, no es capaz de captar un sesgo consistente entre dos series (Es decir, si al simular una escorrentía linealmente representa bien los datos observados, tendremos un r^2 cercano a uno. Pero si los valores son consistentemente superior o inferiores a los observados, entonces el modelo está sobre-estimando o sub-estimando, respectivamente. Esto no nos va a servir. Para corregir esto s eocupa el próximo método) Este método es análogo al que uno hace en Excel para determinar el coeficiente de correlación en un gráfico, sin hacerlo pasar por 0. En caso de hacerlo pasar por 0, se está agregando el sesgo y sería análogo al siguiente método.
 
     2. Coeficiente de determinación r^2 corregido por la pendiente b: es calcular el r^2 multiplicado por una pendiente.
