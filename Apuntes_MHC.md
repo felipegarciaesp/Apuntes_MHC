@@ -171,7 +171,7 @@ Como evaluamos si el modelo lo está haciendo bien?
 
 1. Coeficiente de determinación $$r^2$$: busca el grado de linealidad entre los datos simulados y observados. Igual a 1 significa que la linealidad es perfecta. Sin embargo, no es capaz de captar un sesgo consistente entre dos series (Es decir, si al simular una escorrentía linealmente representa bien los datos observados, tendremos un $$r^2$$ cercano a uno. Pero si los valores son consistentemente superiores o inferiores a los observados, entonces el modelo está sobre-estimando o sub-estimando, respectivamente. Esto no nos va a servir. Para corregir esto se ocupa el próximo método). Este método es análogo al que uno hace en Excel para determinar el coeficiente de correlación en un gráfico, sin hacerlo pasar por 0. En caso de hacerlo pasar por 0, se está agregando el sesgo y sería análogo al siguiente método.
 
-2. Coeficiente de determinación r^2 corregido por la pendiente b: es calcular el r^2 multiplicado por una pendiente.
+2. Coeficiente de determinación $$r^2$$ corregido por la pendiente b: es calcular el $$r^2$$ multiplicado por una pendiente.
 
 3. Nash-Sutcliffe efficiency E: índice de Nash, mide la eficiencia del modelo. Vemos que tan bien lo hace el modelo en comparación con sólo usar el promedio de los datos observados para simular los caudales en la cuenca. Un valor igual a 1 significa que el modelo tiene buena eficiencia, si es igual a 0 significa que el modelo lo hace igual que el promedio. 
     - Este índice va de -inf a 1.
