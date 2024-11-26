@@ -234,7 +234,10 @@ En la clase, Pilar nos muestra la diferencia entre ET de Hargreaves, ET de Oudin
 
 ![ET y Pp total anual](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/ET_y_PP.jpg)
 
-Parte de la incertidumbre de la estimación de la ET se captura en los parámetros del modelo. Con este cálculo de ET lo que se incorpora es la temperatura en la cuenca. Es necesario evaluar la sensibilidad de la temperatura en el modelo. Ante proyecciones, la temperatura puede cambiar mucho y el modelo puede ser muy sensible a este cambio. Puede que tenga el doble o triple de ET en el futuro, y la estimación puede ser no muy buena debido a que la estimación puede ser muy sensible (o no) ante el cambio de la temperatura. Es bueno tener en mente la sensibilidad de la ET respecto a la T.
+Parte de la incertidumbre de la estimación de la ET se captura en los parámetros del modelo. Con este cálculo de ET lo que se incorpora es la temperatura en la cuenca. Es necesario evaluar más de un método par representar la evaporación y además evaluar la sensibilidad de la temperatura en el modelo. Ante proyecciones, la temperatura puede cambiar mucho y la ET puede ser muy sensible a este cambio. Puede que tenga el doble o triple de ET en el futuro, y la estimación puede ser no muy buena debido a que el método para determinar la ET puede ser muy sensible (o no) ante el cambio de la temperatura. Es bueno tener en mente la sensibilidad de la ET respecto a la T.
+
+>NOTAS IMPORTANTES:
+> - Es bueno tener en mente la sensibilidad de la ET con respecto a la temperatura.
 
 >Preguntas:
 > - ¿No debería pasar que la ET sea mayor que la Pp? (como pasa con Hargreaves en el gráfico expuesto) ¿Podría pasar que la ET es mayor que la Pp por evaporación de lagos u otro cuerpos de agua superficial? ¿o no debería pasar que la ET sea mayor que la Pp porque es una condición física que no se puede dar en el modelo GR2M?
