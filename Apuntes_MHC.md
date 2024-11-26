@@ -175,13 +175,15 @@ Como evaluamos si el modelo lo está haciendo bien?
 
 3. Nash-Sutcliffe efficiency E: índice de Nash, mide la eficiencia del modelo. Vemos que tan bien lo hace el modelo en comparación con sólo usar el promedio de los datos observados para simular los caudales en la cuenca. Un valor igual a 1 significa que el modelo tiene buena eficiencia, si es igual a 0 significa que el modelo lo hace igual que el promedio. 
     - Este índice va de -inf a 1.
-    - Un N-SE E menor a 0 implica que el promedio ofrece una mejor estimación que los valores simulados por el modelo.
-    - Un N-SE E mayor que cero es bueno, pero ojalá tener un modelo lo más cercano a 1 y mayor a 0,5, pero va a depender del criterio.
+    - Un N-SE E menor a 0 implica que el promedio ofrece una mejor estimación que los valores simulados por el modelo. Mejor ocupar el promedio de los datos observados en vez de usar el modelo.
+    - Un N-SE E mayor que cero es bueno, pero ojalá tener un modelo lo más cercano a 1 y mayor a 0.5, pero va a depender del criterio.
     - El tener exponenetes cuadrados en la ecuación le da mucho peso a los peaks. Si quiero que se castigue más si no simula bien los peaks (que es lo mismo a querer que el modelo lo haga bien en los peaks), puedo incluso aumentar el exponente. Si no me interesa que el modelo se ajuste a valores peaks, entonces puedo cambiar el exponente o calcular el N-SE del logaritmo de los datos.
 
 4. Nash-Sutcliffe efficiency E exponente modificado: es para abordar lo último del párrafo anterior.
 
-5. Eficiencia de Kling-Gupta (KGE): mide ajuste entre series observadas y simuladas utilizando la eficiencia KGE. Considera un término de sesgo y un término de variabilidad. **Se utilizará un modelo agregado basado en el KGE en aquellos donde nos interese tener una buena representación de la variabilidad y la media (caudales altos o bajos).** Este índice tambien se va a fijar en que tan bien lo hace el modelo respecto a la variabilidad. Uno busca un KGE lo más cercano a 1 posible, valores de 0,5 ó 0,6 son aceptables.
+5. Eficiencia de Kling-Gupta (KGE): mide ajuste entre series observadas y simuladas utilizando la eficiencia KGE. Considera un término de sesgo y un término de variabilidad. **Se utilizará un modelo agregado basado en el KGE en aquellos casos donde nos interese tener una buena representación de la variabilidad y la media (caudales altos o bajos).** Este índice tambien se va a fijar en que tan bien lo hace el modelo respecto a la variabilidad. Uno busca un KGE lo más cercano a 1 posible, valores de 0.5 ó 0.6 son aceptables.
+
+El índice KGE es buen índice porque se hace cargo del sesgo y también considera la variabilidad en toda la serie de tiempo.
 
 El modelo no se calibra con GCM, se calibra con registros de estaciones o datos satelitales o productos de re-análisis o precipitaciones/evaporaciones satelitales. Todos estos representan cosas que pasaron, y debieran tener relación con los datos de escorrentía que se han medido.
 
@@ -193,20 +195,24 @@ Un rezago en la respuesta de caudal, y que es constante, saldrá en alguna de la
 
 Un ejemplo de sesgo podría ser la componente nieve, que puede representar un "lag" en la respuesta de la cuenca. Recordar que el módulo CEMANEIGE de AIRGR es capaz de representar la componente nival.
 
-Es ideal buscar un modelo que se ajuste al proceso hidrológico que quiero representar. No todos los modelos se va a ajustar a todos los procesos hidrológicos, o en todas las cuencas. Hay cuencas que tienen lagos más grandes en donde la respuesta de la cuenca ante una precipitación puede no ser inmediata.
+Es ideal buscar un modelo que se ajuste al proceso hidrológico que quiero representar. No todos los modelos se van a ajustar a todos los procesos hidrológicos, o en todas las cuencas. Hay cuencas que tienen lagos más grandes en donde la respuesta de la cuenca ante una precipitación no va a ser inmediata. Lo mismo pasa con presencia de nieve/glaciar en la cuenca.
 
 Los modelos no buscan hacer una **predicción**, sino que buscan hacer **proyecciones** de valores promedios.
 
-**Pilar Barría recomienda utilizar todas las métricas de evaluación, no quedarse con sólo una métrica. Solo de esta forma nos podemos quedar tranquilos respectos a que se está representando bien el comportamiento de la serie observada**
+**Predicción**: se basa en el análisis de datos históricos y actuales para estimar el futuro. Utiliza modelos matemáticos y estadísticos para hacer una estimación sobre un resultado específico. Por ejemplo, predecir el tiempo basado en datos meteorológicos.
+
+**Proyección**: también se basa en datos históricos, pero se enfoca más en extender una tendencia o patrón en el futuro. No se trata de un evento específico, sino de una extensión de lo que podría suceder si las tendencias actuales continúan. Por ejemplo, proyectar el crecimiento de la población en una ciudad.
+
+**Pilar Barría recomienda utilizar todas las métricas de evaluación, no quedarse con sólo una métrica. Cada métrica indica cosas distintas. Solo de esta forma nos podemos quedar tranquilos respectos a que se está representando bien el comportamiento de la serie observada**
 
 **Residuos:** Corresponden a la diferencia entre los valores observados y simulados.
 
 Se espera que los residuos de los modelos hidrológicos cumplan con las siguientes características:
-    1. Deben ser independientes.
-    2. Ser homocedásticos: que la varianza no dependa del período considerado. Esto significa que la varianza sea constante en el tiempo.
-    3. Deben tener una distribución normal (simétricos).
+    1. Deben ser independientes. Que no tengan dependencia entre ellos.
+    2. Ser homocedásticos: que la varianza no dependa del período considerado. Esto significa que la varianza sea constante en el tiempo. Si el modelo muestra mucha variabilidad de sus datos simulados para un período específico de tiempo, entonces el modelo no lo esta haciendo tan bien.
+    3. Deben tener una distribución normal (es decir, que sean simétricos).
 
-Que los residuos tengan una cierta tendencia (un comportamiento lineal, por ejemplo) significa que el modelo no lo está haciendo bien. Significa que hay una estructura de los datos que no está siendo capturada y que está quedando en los resuduos. Como hay una estructura que no está siendo capturada, seguramente tendremos que cambiar de modelo que sí capture esta estructura.
+Que los residuos tengan una cierta tendencia (un comportamiento lineal, por ejemplo) significa que el modelo no lo está haciendo bien. Significa que hay una estructura de los datos que no está siendo capturada y que está quedando en los residuos. Como hay una estructura que no está siendo capturada, seguramente tendremos que cambiar de modelo que sí capture esta estructura.
 
 **Se puede ocupar el paquete hydroGOF de R para ver las comparaciones gráficas de las series observadas y simuladas.**
 
@@ -215,7 +221,12 @@ Que los residuos tengan una cierta tendencia (un comportamiento lineal, por ejem
 > - Típicamente se divide la serie de tiempo en 2/3 para la calibración y 1/3 para la validación. **Sin embargo no hay una regla, va a depender del caso**
 > - Considerando los cambios de las series hidrometeorológicas durante las últimas décadas, se recomienda calibrar con los últimos años y validar con los primeros años de registro.
 
-## Clase 8.3.mp4
+>Preguntas:
+> - ¿Cómo puedo saber o darme cuenta si los residuos son dependientes o independientes?
+> - Se indica que los residuos deben tener una distribución normal. ¿Cuál es el procedimiento para verificar esto? ¿Debo hacer un histograma?
+
+
+## Clase 8.3
 
 Se hace un ejercicio práctico en esta clase. Es la Guía de modelación AIRGR, por lo que se programa en R.
 
