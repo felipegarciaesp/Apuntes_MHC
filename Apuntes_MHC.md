@@ -228,18 +228,20 @@ Que los residuos tengan una cierta tendencia (un comportamiento lineal, por ejem
 
 ## Clase 8.3
 
-Se hace un ejercicio práctico en esta clase. Es la Guía de modelación AIRGR, por lo que se programa en R.
+El método de Oudin para estimar la evapotranspiración toma sólo como variabe de entrada la temperatura. Si en un estudio estamos interesados en determinar la evapotranspiración, es recomendable utilizar productos satelitales (como SSEBop).
 
-El método de Oudin para estimar la evapotranspiración toma sólo como variabe de entrada la temperatura. Si es un estudio estamos interesados en determinar la evapotranspiración, es recomendable utilizar etudios satelitales (como SSEBop).
+En la clase, Pilar nos muestra la diferencia entre ET de Hargreaves, ET de Oudin y la precipitación. Se identifica que hay marcada diferencia entre ambas ET, lo que muestra que hay una gran incertidumbre en su determinación. La ET de Oudin es mucho menor, mientras que la de Hargreaves es mucho mayor. En ocasiones Hargreaves es incluso mayor a la precipitación, lo que indica que tampoco es un valor razonable. En el siguiente gráfico se ve la precipitación junto con las ET de Oudin y Hargreaves (total anual) para la cuenca estudiada (Cauquenes):
 
-En la clase, Pilar nos muestra la diferencia entre ET de Hargreaves, ET de Ooudin y la precipitación. Se identifica que hay marcada diferencia entre ambas ET, lo que muestra que hay una gran incertidumbre en su determinación. La ET de Oudin es mucho menor, mientras que la de Hargreaves es mucho mayor. En ocasiones Hargreaves es incluso mayor a la precipitación, lo que indica que tampoco es un valor razonable.
+![ET y Pp total anual](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/ET_y_PP.jpg)
 
-Comentario de Ignacio Toro: Parte de la incertidumbre de la estimación de la ET se captura en los parámetros del modelo. Con este cálculo de ET lo que se incorpora es la temperatura en la cuenca. Es necesario evaluar la sensibilidad de la temperatura en el modelo. Ante proyecciones, la temperatura puede cambair mucho y el modelo puede ser muy sensible a este cambio. Puede que tenga el doble o triple de ET en el futuro, y la etimación puede ser no muy buena debido a que la estimación puede ser muy sensible (o no) ante el cambio de la temperatura. Es bueno tener en mente la sensibilidad de la ET respecto a la T.
+Parte de la incertidumbre de la estimación de la ET se captura en los parámetros del modelo. Con este cálculo de ET lo que se incorpora es la temperatura en la cuenca. Es necesario evaluar la sensibilidad de la temperatura en el modelo. Ante proyecciones, la temperatura puede cambiar mucho y el modelo puede ser muy sensible a este cambio. Puede que tenga el doble o triple de ET en el futuro, y la estimación puede ser no muy buena debido a que la estimación puede ser muy sensible (o no) ante el cambio de la temperatura. Es bueno tener en mente la sensibilidad de la ET respecto a la T.
 
-A partir de acá en la Clase se implementa un Código para usar los Modelos Hidrológicos. Por el momento me saltaré esta parte para hacer cosas más de teoría. Queda pendiente retomar.
+>Preguntas:
+> - ¿No debería pasar que la ET sea mayor que la Pp? (como pasa con Hargreaves en el gráfico expuesto) ¿Podría pasar que la ET es mayor que la Pp por evaporación de lagos u otro cuerpos de agua superficial? ¿o no debería pasar que la ET sea mayor que la Pp porque es una condición física que no se puede dar en el modelo GR2M?
+
 
 # 9. Downscalling de GCMs
-## Clase 9.1.mp4
+## Clase 9.1
 
 NetCDF: archivos que contienen los GCM y los contienen de manera grillada.
 Cada nodo de la grilla explica el clima dentro de su área de influencia.
