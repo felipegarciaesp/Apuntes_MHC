@@ -236,6 +236,24 @@ En la clase, Pilar nos muestra la diferencia entre ET de Hargreaves, ET de Oudin
 
 Parte de la incertidumbre de la estimación de la ET se captura en los parámetros del modelo. Con este cálculo de ET lo que se incorpora es la temperatura en la cuenca. Es necesario evaluar más de un método par representar la evaporación y además evaluar la sensibilidad de la temperatura en el modelo. Ante proyecciones, la temperatura puede cambiar mucho y la ET puede ser muy sensible a este cambio. Puede que tenga el doble o triple de ET en el futuro, y la estimación puede ser no muy buena debido a que el método para determinar la ET puede ser muy sensible (o no) ante el cambio de la temperatura. Es bueno tener en mente la sensibilidad de la ET respecto a la T.
 
+Explicación de algunos paquetes de R:
+- zoo: permite trabajar fechas y cambiar su formato.
+- hydroGOF: tiene las metricas para evaluar modelos hidrologicos (Nash, KGE, etc.)
+- hydroTSM: para trabajar con series de tiempo y para analizar residuos.
+
+Si se quisiera saber que pasos seguir para correr cualquiera de los modelos implementados en airGR, debes buscar el modelo en la barra de 'Help':
+
+![Ayuda modelos airGR](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ayuda%20airGR.jpg)
+
+### Período de calentamiento:
+El período de calentamiento en la calibración de un modelo hidrológico se refiere a un intervalo inicial del tiempo de simulación durante el cual el modelo se "prepara" y ajusta sus variables internas antes de que los resultados sean considerados fiables. 
+Durante este período, el modelo ajusta sus condiciones iniciales, como niveles de agua en ríos y reservas de humedad en el suelo, para alinearse con las condiciones reales del entorno que está simulando. La idea es evitar el impacto de las condiciones iniciales no realistas que podrían sesgar los resultados.
+Es como darle un margen para "entrar en calor" y estabilizarse, asegurando que las salidas del modelo reflejen con mayor precisión la realidad hidrológica del área estudiada.
+
+Si no cuentas con una suficiente cantidad de datos para la calibración, podría ser buena idea que repitas el primer año de registros (por ejemplo), para que utilice este tiempo como de calentamiento.
+Pero si tienes varios años de datos, entonces no habría problemas. Simplemente sacrificas los resultados del período que toma el modelo como de calentamiento (primer año, por ejemplo).
+
+
 >NOTAS IMPORTANTES:
 > - Es bueno tener en mente la sensibilidad de la ET con respecto a la temperatura.
 
