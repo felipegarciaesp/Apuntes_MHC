@@ -253,13 +253,22 @@ Es como darle un margen para "entrar en calor" y estabilizarse, asegurando que l
 Si no cuentas con una suficiente cantidad de datos para la calibración, podría ser buena idea que repitas el primer año de registros (por ejemplo), para que utilice este tiempo como de calentamiento.
 Pero si tienes varios años de datos, entonces no habría problemas. Simplemente sacrificas los resultados del período que toma el modelo como de calentamiento (primer año, por ejemplo).
 
+En Chile estamos pasando por un período de Mega Sequía desde el año 2010. Es muy común que para este período los modelos sobre-estimen los caudales de este último período.
+Se ha identificado que debido a la Mega Sequía la respuesta de las cuencas ha cambiado debido a los caudales bajos. Incluso el rendimiento de las cuencas ha cambiado, lo que provoca problemas en el modelo. 
 
 >NOTAS IMPORTANTES:
 > - Es bueno tener en mente la sensibilidad de la ET con respecto a la temperatura.
+> - Si tuvieramos nuestros datos de caudales mensuales en $$(m^3)/s$$ y quisieramos agruparlo a nivel anual, debiésemos obtener el promedio. Sin emabrgo, si están en $$mm$$ se deben sumar los datos mensuales para agruparlos a nivel anual (de hecho, no podemos promediar).
+> - Es normal que los modelos hidrológicos tengan algúntipo de error. Lo importante es que los errores no sean persistentes.
+> - Ojo que la función CreateRunOptions de airGR te va a tirar una alerta siempre que no le indiques un período de calentamiento. De no indicar alguno, va a tomar el primer año como de calentamiento.
 
 >Preguntas:
 > - ¿No debería pasar que la ET sea mayor que la Pp? (como pasa con Hargreaves en el gráfico expuesto) ¿Podría pasar que la ET es mayor que la Pp por evaporación de lagos u otro cuerpos de agua superficial? ¿o no debería pasar que la ET sea mayor que la Pp porque es una condición física que no se puede dar en el modelo GR2M?
+> - Resuelve la duda relacionada con la segunda nota importante: ¿porque los caudales mensuales no se suman al agruparlo a nivel anual? ¿porque sumarlo sería un error? ¿lo que tenemos son datos de caudal promedio mensual? ¿porque sería un error obtener el promedio de los datos de caudal en $$mm$$ si queremos agruparlos a nivel anual?
 
+
+>Tareas:
+> - En esta clase Pilar muestra la funcion ggof. Prueba a ver que cambia cuando cambias el ftype y/o el FUN. Como estamos viendo caudales, debieramos estar viendo promedios y no sumas, pero ve como cambian los datos cambiando FUN entre mean y sum (Pilar lo tiene en la clase como sum, el codigo lo tiene como mean). Corrobora si cambia algo. Tambien verifica con los valores de caudales en el Excel mismo.
 
 # 9. Downscalling de GCMs
 ## Clase 9.1
