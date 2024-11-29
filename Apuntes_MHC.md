@@ -256,6 +256,10 @@ Pero si tienes varios años de datos, entonces no habría problemas. Simplemente
 En Chile estamos pasando por un período de Mega Sequía desde el año 2010. Es muy común que para este período los modelos sobre-estimen los caudales de este último período.
 Se ha identificado que debido a la Mega Sequía la respuesta de las cuencas ha cambiado debido a los caudales bajos. Incluso el rendimiento de las cuencas ha cambiado, lo que provoca problemas en el modelo. 
 
+No hay una receta única para la modelación hidrológica, nosotros tenemos que hacernos las preguntas necesarias para tener un modelo adecuado.
+
+Si tuvieras pocos datos para calibrar y si, por ejemplo, tienes data mensual, podrías utilizar un modelo de tipo diario para calibrar. De esta forma tendrías mas datos con los que trabajar.
+
 >NOTAS IMPORTANTES:
 > - Es bueno tener en mente la sensibilidad de la ET con respecto a la temperatura.
 > - Si tuvieramos nuestros datos de caudales mensuales en $$(m^3)/s$$ y quisieramos agruparlo a nivel anual, debiésemos obtener el promedio. Sin emabrgo, si están en $$mm$$ se deben sumar los datos mensuales para agruparlos a nivel anual (de hecho, no podemos promediar).
@@ -263,7 +267,7 @@ Se ha identificado que debido a la Mega Sequía la respuesta de las cuencas ha c
 > - Ojo que la función CreateRunOptions de airGR te va a tirar una alerta siempre que no le indiques un período de calentamiento. De no indicar alguno, va a tomar el primer año como de calentamiento.
 
 >Preguntas:
-> - ¿No debería pasar que la ET sea mayor que la Pp? (como pasa con Hargreaves en el gráfico expuesto) ¿Podría pasar que la ET es mayor que la Pp por evaporación de lagos u otro cuerpos de agua superficial? ¿o no debería pasar que la ET sea mayor que la Pp porque es una condición física que no se puede dar en el modelo GR2M?
+> - ¿La ET nunca debería sea mayor que la Pp? (como pasa con Hargreaves en el gráfico expuesto) ¿Podría pasar que la ET es mayor que la Pp por evaporación de lagos u otro cuerpos de agua superficial? ¿o no debería pasar que la ET sea mayor que la Pp porque es una condición física que no se puede dar en el modelo GR2M?
 > - Resuelve la duda relacionada con la segunda nota importante: ¿porque los caudales mensuales no se suman al agruparlo a nivel anual? ¿porque sumarlo sería un error? ¿lo que tenemos son datos de caudal promedio mensual? ¿porque sería un error obtener el promedio de los datos de caudal en $$mm$$ si queremos agruparlos a nivel anual?
 
 
