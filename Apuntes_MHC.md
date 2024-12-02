@@ -313,15 +313,25 @@ Cada dato de clima del GCM se pasa por la curva de Función de Distribución Acu
 
 ![Quantile Mapping Bias Correction](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Quantile%20Mapping%20Bias%20Correction.jpg)
 
+![Quantile Mapping 2](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Quantile%20Mapping%202.jpg)
+
 Matemáticamente, esto se expresa asi:
 
 $$x_{BC\space GCM} = F_{Obs}^{-1}(F_{GCM\space H}(x_{GCM}))$$ 
+
+La distribución Gamma es muy utilizada para precipitaciones, corresponde a la de la siguiente imagen:
+
+![Ddistribucion Gamma](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Distribucion%20Gamma.jpg)
 
 La distribución Gamma es una distribución estrictamente no negativa.
 
 - Este método se usa (originalmente y comúnmente) a nivel mensual.
 - Se ha utilizado también a nivel diario y se puede usar a nivel anual.
 - Para el caso de **cuencas semi-áridas (o período seco)** puede que no funcione bien a **nivel mensual en las precipitaciones.** (en años sin precipitaciones podría haber problemas para implementar el método).
+
+>NOTAS IMPORTANTES:
+> - La distribución Gamma es muy utilizada para precipitaciones.
+> - La distribución normal es muy utilizada para temperatura.
 
 ## Clase 9.3
 
