@@ -384,8 +384,13 @@ Recordar que el procedimiento de **Quantile Mapping** es como el que se muestra 
 ![Procedimiento Quantile Mapping](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/QM%201.jpg)
 
 Con el Delta Change yo obtengo una tasa de cambio en una ventana temporal que se lo aplico a los datos históricos. Con funciones de escalamiento (tipo Quantile Mapping) lo que hago es corregir el sesgo de una serie de GCM.
+Lo que hago con el QM es obtener una serie del GCM sin sesgo.
 
-Delta Change es bueno para ver disponibilidades.
+Delta Change es recomendable para ocupar porque es muy sencillo, no es un método muy sofisticado.
+
+>NOTAS IMPORTANTES:
+> - Delta Change es bueno para ver disponibilidades de agua.
+> - Para evaluar eventos extremos, será necesario aplicar métodos más sofisticados de escalamiento.
 
 >Preguntas:
 > - No entendí lo que dijeron respecto a los problemas de QM. La serie del GCM va cambiando en el tiempo y puede haber una serie de precipitación que quede fuera de la distribución. Averiguar sobre los problemas de Quantile Mapping.
