@@ -288,7 +288,7 @@ Downscaling, 2 grandes grupos:
     1. Dynamical
     2. Statistical
 
-Dynamical usa un enfoque físico y se suelen llamar Regional Climate Models (RCM), porque son modelos de cambio climático en una región pequeñita. Producen resultados basándose en ecuaciones que mantienen consitencia de los procesos físicos.
+Dynamical usa un enfoque físico y se suelen llamar Regional Climate Models (RCM), porque son modelos de cambio climático en una región pequeñita. Producen resultados basándose en ecuaciones que mantienen consistencia de los procesos físicos.
 
 Statistical se divide en 3 grupos: 
     1. de tipo Regresivo (regresiones): función matemática que busca la relación de corrección.
@@ -301,7 +301,7 @@ Desventajas de Statistical:
 
 El Downscaling Estadístico busca alguna relación estadística entre el GCM y el clima local.
 
-## Clase 9.2.mp4
+## Clase 9.2
 
 Los Downscaling de tipo Regresivo buscan una función que quite el sesgo de las proyecciones de los GCM.
 
@@ -309,7 +309,13 @@ Los Downscaling de tipo Regresivo buscan una función que quite el sesgo de las 
 
 Es un método de corrección de sesgo que toma como supuesto corregir los percentiles de la curva acumulada del GCM con respecto a la histórica.
 
-Cada dato de clima del GCM se pasa por la curva de Función de Distribución Acumulada (CDF) del GCM para calcular su probabilidad y se usa esa probabilidad en la CDF del Histórico para calcular el clima sin sesgo.
+Cada dato de clima del GCM se pasa por la curva de Función de Distribución Acumulada (CDF) del GCM para calcular su probabilidad y se usa esa probabilidad en la CDF del Histórico para calcular el clima sin sesgo:
+
+![Quantile Mapping Bias Correction](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Quantile%20Mapping%20Bias%20Correction.jpg)
+
+Matemáticamente, esto se expresa asi:
+
+$$x_(BC GCM) = (F^-1)_(Obs)(F_(GCM H)(x_GCM))$$
 
 La distribución Gamma es una distribución estrictamente no negativa.
 
