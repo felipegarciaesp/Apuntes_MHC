@@ -269,7 +269,7 @@ Si tuvieras pocos datos para calibrar y si, por ejemplo, tienes data mensual, po
 >Preguntas:
 > - ¿La ET nunca debería sea mayor que la Pp? (como pasa con Hargreaves en el gráfico expuesto) ¿Podría pasar que la ET es mayor que la Pp por evaporación de lagos u otro cuerpos de agua superficial? ¿o no debería pasar que la ET sea mayor que la Pp porque es una condición física que no se puede dar en el modelo GR2M?
 > - Resuelve la duda relacionada con la segunda nota importante: ¿porque los caudales mensuales no se suman al agruparlo a nivel anual? ¿porque sumarlo sería un error? ¿lo que tenemos son datos de caudal promedio mensual? ¿porque sería un error obtener el promedio de los datos de caudal en $$mm$$ si queremos agruparlos a nivel anual?
-
+> - Como era el calculo para normalizar la data de Q? para pasarla a mm.
 
 >Tareas:
 > - En esta clase Pilar muestra la funcion ggof. Prueba a ver que cambia cuando cambias el ftype y/o el FUN. Como estamos viendo caudales, debieramos estar viendo promedios y no sumas, pero ve como cambian los datos cambiando FUN entre mean y sum (Pilar lo tiene en la clase como sum, el codigo lo tiene como mean). Corrobora si cambia algo. Tambien verifica con los valores de caudales en el Excel mismo.
@@ -377,14 +377,15 @@ La fórmula del **Delta Change** se estima con los datos del GCM. Ojo ahí! Es s
 Una vez que tengamos el delta de cambio de Precipitación y Temperatura, esto lo aplicamos a nuestros datos históricos observados.
 Es importante recalcar que con el Delta Change se está calculando el cambio en el clima para una ventana de tiempo (30 años usualmente), no se está obteniendo una serie continua.
 
-**Pregunta:** el Delta Change se aplica a los datos de GCM crudos y escalados?
-
 La función **Quantile Mapping** usa datos observados y del GCM. Es recomendable partir entendiendo Quantile Mapping para entender los demás. Para el Balance Hídrico Nacional se ocupó el Quantile Delta Mapping.
+
+Recordar que el procedimiento de **Quantile Mapping** es como el que se muestra en la siguiente figura:
+
+![Procedimiento Quantile Mapping](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/QM%201.jpg)
 
 Con el Delta Change yo obtengo una tasa de cambio en una ventana temporal que se lo aplico a los datos históricos. Con funciones de escalamiento (tipo Quantile Mapping) lo que hago es corregir el sesgo de una serie de GCM.
 
-Pregunta: No entendí lo que dijeron respecto a los problemas de QM. La serie del GCM va cambiando en el tiempo y puede haber una serie de precipitación que quede fuera de la distribución. Averiguar sobre los problemas de Quantile Mapping.
-
 Delta Change es bueno para ver disponibilidades.
 
-Quedé en 00:32:00
+>Preguntas:
+> - No entendí lo que dijeron respecto a los problemas de QM. La serie del GCM va cambiando en el tiempo y puede haber una serie de precipitación que quede fuera de la distribución. Averiguar sobre los problemas de Quantile Mapping.
