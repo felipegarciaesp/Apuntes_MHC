@@ -332,12 +332,44 @@ La distribución Gamma es una distribución estrictamente no negativa.
 >NOTAS IMPORTANTES:
 > - La distribución Gamma es muy utilizada para precipitaciones.
 > - La distribución normal es muy utilizada para temperatura.
+> - Luego de aplicar la corrección de sesgo a los datos historicos del GCM, el promedio y la desviación estándar de estos quedan muy parecidos a los del período histórico observado.
 
 ## Clase 9.3
 
 **Delta Change**
 
 - Consiste en extraer las tasas de cambio de variables climáticas del GCM y generar clima con dichas tasas de cambio.
+
+$$\Delta Precipitaciones (%)$$
+$$\Delta Temperaturas (°C)$$ 
+
+![Delta Change](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Delta%20Change.jpg)
+
+El delta change se estima entre los datos del GCM.
+
+Una vez obtenidas las tasas de cambio de los GCM, se aplican al clima histórico observado para obtener las proyecciones futuras:
+
+![Delta Change 2](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Delta%20Change%202.jpg)
+
+En la siguiente figura se muestra el procedimiento para aplicar Delta Change:
+
+![Delta Change 3](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Delta%20Change%203.jpg)
+
+El Delta Change es aplicado a la precipitación de manera multiplicativa, por lo que tanto la media como la desviación estándar se ven afectadas:
+
+![Delta Change 4](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Delta%20Change%204.jpg)
+
+Para el caso de la temperatura se aplica de manera aditiva, por lo que la media se ve afectada pero no la desviación estándar:
+
+![Delta Change 5](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Delta%20Change%205.jpg)
+
+>NOTAS IMPORTANTES:
+> - La tasa de cambio de precipitación se trabaja en porcentaje, a difernecia de la temperatura que es en magnitud. Esto es porque ante una disminución en la proyección de la precipitación, nos podríamos enfrentar a precipitaciones negativas, lo que no es físicamente posible. Debido a esto, los cambios proyectados en la precipitación se trabajan con porcentajes.
+
+
+>Preguntas:
+> - El Delta Change se aplica para los datos del GCM, pero estos datos son los crudos o escalados?
+
 
 ## Clase 9.4
 
