@@ -315,7 +315,7 @@ Cada dato de clima del GCM se pasa por la curva de Función de Distribución Acu
 
 Matemáticamente, esto se expresa asi:
 
-$$f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}$$ 
+$$x_{BC GCM} = F^{-1}(F_{GCM H}(x_{GCM}))$$ 
 
 La distribución Gamma es una distribución estrictamente no negativa.
 
