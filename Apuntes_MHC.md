@@ -365,7 +365,7 @@ Para el caso de la temperatura se aplica de manera aditiva, por lo que la media 
 
 >NOTAS IMPORTANTES:
 > - La tasa de cambio de precipitación se trabaja en porcentaje, a difernecia de la temperatura que es en magnitud. Esto es porque ante una disminución en la proyección de la precipitación, nos podríamos enfrentar a precipitaciones negativas, lo que no es físicamente posible. Debido a esto, los cambios proyectados en la precipitación se trabajan con porcentajes.
-
+> - En la resolución del ejercicio (clase 9.4) se puede ver que el delta change para precipitación se aplica a las series de precipitaciones medias mensuales de los GCM (historico y futuro). Estos valores de delta change mensuales son los que luego se aplican a la serie histórica observada para obtener los valores de precipitación futura.
 
 >Preguntas:
 > - El Delta Change se aplica para los datos del GCM, pero estos datos son los crudos o escalados?
@@ -394,3 +394,4 @@ Delta Change es recomendable para ocupar porque es muy sencillo, no es un métod
 
 >Preguntas:
 > - No entendí lo que dijeron respecto a los problemas de QM. La serie del GCM va cambiando en el tiempo y puede haber una serie de precipitación que quede fuera de la distribución. Averiguar sobre los problemas de Quantile Mapping.
+
