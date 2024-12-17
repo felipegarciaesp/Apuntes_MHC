@@ -368,6 +368,9 @@ Para el caso de la temperatura se aplica de manera aditiva, por lo que la media 
 > - En la resolución del ejercicio (clase 9.4) se puede ver que el delta change para precipitación se aplica a las series de precipitaciones medias mensuales de los GCM (historico y futuro). Estos valores de delta change mensuales son los que luego se aplican a la serie histórica observada para obtener los valores de precipitación futura.
 > - En la misma resolución del ejercicio se ve que el Delta Change se aplica para los datos de los GCM sin haber aplicado ningún tipo de downscaling (son datos crudos, no escalados).
 
+>Preguntas:
+> - En el ejercicio se vió que el delta change se calcula con los promedios mensuales de la precipitación. ¿Se puede hacer el delta change con los promedios de la serie completa? ¿habria sido correcto obtener el promedio entre 2065-2100 y el promedio entre 1979-2014 y sobre estos calcular el delta change?
+
 ## Clase 9.4
 
 La fórmula del **Delta Change** se estima con los datos del GCM. Ojo ahí! Es sólo con los datos del GCM.
@@ -392,3 +395,9 @@ Delta Change es recomendable para ocupar porque es muy sencillo, no es un métod
 >Preguntas:
 > - No entendí lo que dijeron respecto a los problemas de QM. La serie del GCM va cambiando en el tiempo y puede haber una serie de precipitación que quede fuera de la distribución. Averiguar sobre los problemas de Quantile Mapping.
 
+## Clase 9.5
+
+Al momento de aplicar Quantile Mapping (downscaling) es común asumir que se debe asignar una distribución Gamma para la precipitación y una distribución Normal para la temperatura.
+
+>TAREAS:
+> - En esta clase Cristian Chadwick habla respecto a ajustar distribuciones por el método de máxima verosimilitud y por método de los momentos. Averigua a que corresponden estos dos métodos. La distribución gamma que se ve en clases está ajustada por el método de los momentos (se calcula un alfa y un beta).
