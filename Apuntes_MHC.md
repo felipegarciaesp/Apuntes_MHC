@@ -397,7 +397,9 @@ Delta Change es recomendable para ocupar porque es muy sencillo, no es un métod
 
 ## Clase 9.5
 
-Al momento de aplicar Quantile Mapping (downscaling) es común asumir que se debe asignar una distribución Gamma para la precipitación y una distribución Normal para la temperatura.
+Al momento de aplicar Quantile Mapping (downscaling) es común asumir una distribución Gamma para la precipitación y una distribución Normal para la temperatura.
+
+Cuando se aplica Quantile Mapping es importante determinar los valores de $$/alpha$$
 
 >TAREAS:
 > - En esta clase Cristian Chadwick habla respecto a ajustar distribuciones por el método de máxima verosimilitud y por método de los momentos. Averigua a que corresponden estos dos métodos. La distribución gamma que se ve en clases está ajustada por el método de los momentos (se calcula un alfa y un beta).
