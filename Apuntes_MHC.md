@@ -399,12 +399,12 @@ Delta Change es recomendable para ocupar porque es muy sencillo, no es un métod
 
 Al momento de aplicar Quantile Mapping (downscaling) es común asumir una distribución Gamma para la precipitación y una distribución Normal para la temperatura. La distribución Gumbel también puede ser una buena opción para el caso de la temperatura, en caso de que los datos originales presenten alguna asimetría.
 
-En las siguientes dos imágenes se puede ver un ejemplo de Quantile Mapping que ha resultado **muy bien tanto para el promedio como para la desviación estándar**, lo que indica que la distribución Gamma escogida inicialemnte fué una decisión correcta.
+En las siguientes dos imágenes se puede ver un ejemplo de Quantile Mapping aplicado a los datos de precipitación que ha resultado **muy bien tanto para el promedio como para la desviación estándar**, lo que indica que la distribución Gamma escogida inicialemnte fué una decisión correcta.
 
 ![Ejemplo BC muy bien](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_muybien.jpg)
 ![Ejemplo BC muy bien 2](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_muybien2.jpg)
 
-En cambio, en las siguientes dos imágenes se puede ver como la distribución Normal elegida para realizar el Quantile Mapping a los datos de temperatura no fue lo más acertado. **Como se puede ver, para el caso del promedio la corrección de sesgo ha resultado ser buena, pero se identifican problemas para el caso de la desviación estándar.** En este caso pudo haber sido mejor elegir la distribución Gumbel en lugar de la Normal.
+En cambio, en las siguientes dos imágenes se puede ver como la distribución Normal elegida para realizar el Quantile Mapping a los datos de temperatura no fue lo más acertado. **Como se puede ver, para el caso del promedio la corrección de sesgo ha resultado ser buena, pero se identifican problemas para el caso de la desviación estándar.** En este caso pudo haber sido mejor elegir otra distribución en lugar de la Normal.
 
 ![Ejemplo BC bien](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_bien.jpg)
 ![Ejemplo BC problemas](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_problemas.jpg)
