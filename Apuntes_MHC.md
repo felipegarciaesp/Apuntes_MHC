@@ -420,10 +420,95 @@ En resumen, se va a tener que cada mes de cada set de datos que estamos utilizan
 >NOTAS IMPORTANTES:
 > - Si al aplicar Quantile Mapping resulta que el promedio y la desviación estándar de los datos corregidos no se ajustan al promedio y desviación estándar de los datos observados, se puede deber a que la distribución escogida no es la óptima. Esto se debe a que los datos originales en realidad no se adaptan a la distribución escogida, por lo que una solución sería cambiar la distribución.
 > - El Delta Change funciona super bien y es recomendable usarlo si uno tiene que utilizar un solo método.
+> - El método de escalamiento a elegir dependerá del problema específico que se quiere resolver.
 
 >Preguntas:
 > - Como puedo identificar cuál es el método de escalamiento apropiado para utilizar? Como identificar si debo utilizar QM, QDM, UQM, MBCn, SDM, etc.? Digamos, de que depende?
+> - ¿Qué método de escalamiento es recomendable utilizar para eventos extremos?
 
 >TAREAS:
 > - En esta clase Cristian Chadwick habla respecto a ajustar distribuciones por el método de máxima verosimilitud y por método de los momentos. Averigua a que corresponden estos dos métodos. La distribución gamma que se ve en clases está ajustada por el método de los momentos (se calcula un alfa y un beta).
 > - Averiguar sobre el método Scale Distribution Mapping. Cristian Cahdwick ha indicado que entender las ecuaciones es un dolor de cabeza.
+
+# 10. Incertidumbre
+## Clase 10.1 
+
+La incertidumbre es un estado de conocimiento incompleto, que se debe a una falta de infrmación o a un desacuerdo respecto a lo que es conocido.
+La incertidumbre puede deberse a la imprecisión de los datos, definición ambigua de un término, proyección incierta del comportamiento humano, etc.
+
+En el caso de proyecciones climáticas, la incertidumbre se identifica en la dispersión de las simulaciones.
+
+Un modelo de una zona con menor cantidad de datos observados tendrá mayor incertidumbre en sus simulaciones.
+
+>Experimento determinístico
+>Un experimento determinístico es aquel en el que el resultado está completamente determinado por las condiciones iniciales y las leyes que rigen el sistema, sin ningún tipo de aleatoriedad o incertidumbre. En otras palabras, si se conocen todas las variables y las condiciones iniciales, se puede predecir exactamente el resultado del experimento. Los resultados del experimento serán los mismos independiente de la cantidad de veces que repita el experimento (siempre y cuando se mantengan constantes las variables y condiciones iniciales).
+>Un ejemplo clásico de un experimento determinístico es el lanzamiento de un objeto bajo las leyes de la física clásica: si se conocen la posición, la velocidad inicial, y las fuerzas actuantes, se puede predecir exactamente la trayectoria y la posición futura del objeto.
+
+>Experimento estocástico
+>Un experimento estocástico es un tipo de experimento en el cual el resultado no puede predecirse con certeza debido a la presencia de elementos aleatorios. En otras palabras, incluso si se conocen las condiciones iniciales y las leyes que rigen el sistema, el resultado no se puede determinar de antemano y puede variar cada vez que se realiza el experimento.
+>Un ejemplo clásico de un experimento estocástico es el lanzamiento de un dado: aunque se conocen todas las posibles caras del dado, no se puede predecir con certeza cuál será el resultado de un lanzamiento específico, ya que cada lanzamiento es independiente y tiene un elemento de aleatoriedad.
+
+Aunque "estocástico" y "aleatorio" a menudo se usan de manera intercambiable, hay una diferencia sutil entre ellos.
+
+**Aleatorio** se refiere a cualquier cosa que ocurre sin un patrón predecible o sin causa determinable. Es puramente el resultado de la casualidad, como el lanzamiento de una moneda.
+
+**Estocástico**, por otro lado, se usa más en contextos matemáticos o científicos y suele implicar un proceso que tiene algún componente aleatorio, pero también puede estar influenciado por otros factores. Por ejemplo, un proceso estocástico puede tener patrones probabilísticos definidos que describen cómo evolucionan los resultados aleatorios a lo largo del tiempo.
+
+En resumen:
+- **Aleatorio**: Completamente al azar, sin patrón predecible.
+- **Estocástico**: Incluye elementos aleatorios pero puede seguir ciertas leyes probabilísticas o patrones.
+
+La naturaleza del clima es aleatoria ya que tiene componentes que no se pueden parametrizar de manera determinística, por lo que los modelos tienen una componente de ruido aleatoria (o caótica).
+No se puede decir con certeza cuánto va a llover un día específico, pero se puede indicar si es probable o no que llueva dependiendo de la estación del año o por revisión de variables como circulación terrestre o las presiones.
+
+Se utilizan muchos modelos para tener mayor confianza respecto a la señal de cambio climático simulada. El nivel de dispersión entre todos los modelos de CC evaluados es lo que se denomina como **incertidumbre**.
+
+**La incertidumbre se va a abordar con un enfoque probabilístico.**
+
+>Los "forzantes radiativos" son factores que alteran el equilibrio energético de la Tierra al influir en la cantidad de energía solar que nuestro planeta recibe o la cantidad de energía térmica que escapa al espacio. Estos forzantes pueden ser tanto naturales como antropogénicos (originados por actividades humanas).
+>Ejemplos de forzantes radiativos incluyen:
+>- **Gases de efecto invernadero**: Como el dióxido de carbono (CO₂), el metano (CH₄), y el óxido nitroso (N₂O), que atrapan el calor en la atmósfera.
+>- **Aerosoles**: Pequeñas partículas en suspensión en el aire, como el polvo, las cenizas volcánicas, y las emisiones industriales, que pueden reflejar o absorber la luz solar.
+>- **Cambios en la radiación solar**: Variaciones en la actividad del Sol que afectan la cantidad de energía que llega a la Tierra.
+>- **Albedo**: La reflectividad de la superficie terrestre, que puede cambiar por factores como la cobertura de nieve y hielo, o el uso del suelo.
+>Estos forzantes juegan un papel crucial en el clima del planeta, y su estudio es fundamental para comprender y predecir el cambio climático.
+>En los modelos de cambio climático, las nomenclaturas SSP2-4.5 y SSP5-8.5 hacen referencia a distintas concentraciones de estos forzantes radiativos, siendo el segundo más pesimista que el primero en las proyecciones.
+
+**Equifinalidad de los modelos hidrológicos:** Se refiere a que distintos sets de parámetros de entrada con los que se define un modelo hidrológico podrían dar simulaciones que estadísticamente se ajustan bien a los datos observados. **Esto significa que hay múltiples soluciones posibles que pueden explicar los mismos fenómenos, lo que puede dificultar la identificación del modelo más preciso o realista.**
+
+La **equifinalidad** se puede abordar mediante metodologías como GLUE (Generalised Likelihood Uncertainty Estimation) o como Monte Carlo (para hacer simulaciones repetitivas considerando sets de parametros dentro de los rangos físicamente plausibles).
+
+En R la **equifinalidad** se puede abordar con el paquete **hydroPSO**. Se puede utilizar con airGR y con WEAP.
+
+Los productos de reanálisis podrían llegar a tener mejores resultados en el hemisferio norte frente al hemisferio sur debido a la baja densidad de medición en este último hemisferio.
+Recordar que los productos de reanálisis corresponden a simulaciones que son reconstrucciones de lo que ha ocurrido en base a la información observada disponible.
+
+
+
+Entender las fuentes de incertidumbres de las proyecciones de cambio climático y de los modelos hidrológicos nos permite poder identificar:
+1. Aquellas incertidumbres que podemos disminuir o acotar por medio de mayor información. 
+2. Aquellas que en realidad son parte de la naturaleza del fenómeno y tenemos que aprender a lidiar con ellas y presentar los resultados de maneras que sean útiles a pesar de estar ligadas a un desconocimiento o incertidumbre.
+
+
+>Un **producto de reanálisis** es un conjunto de datos generados mediante modelos que combinan observaciones meteorológicas y climáticas con algoritmos estadísticos o dinámicos para crear una representación más completa y coherente de las condiciones atmosféricas pasadas. Estos productos son útiles para estudios climáticos, hidrológicos y para validar modelos atmosféricos.
+>**CR2MET** y **CHIRPS** son ejemplos de productos de reanálisis. 
+>- **CR2MET** es un conjunto de datos de precipitación y temperaturas extremas desarrollado por el Centro de Ciencia del Clima y la Resiliencia (CR2), que utiliza modelos estadísticos y observaciones de diferentes fuentes.
+>- **CHIRPS** (Climate Hazards Group InfraRed Precipitation with Station data) es otro conjunto de datos de precipitación que combina imágenes de satélites con datos de estaciones meteorológicas para proporcionar una cobertura global de precipitación.
+
+>La diferencia principal entre un producto de reanálisis y un modelo de Circulación General (GCM, por sus siglas en inglés) radica en su propósito y en cómo se construyen:
+>**Producto de Reanálisis**
+>- **Propósito:** Crear una representación coherente y completa del estado de la atmósfera en el pasado usando tanto observaciones como modelos.
+>- **Método:** Utiliza datos históricos de observaciones (satélites, estaciones meteorológicas, globos sonda, etc.) y los integra con modelos numéricos a través de un proceso llamado asimilación de datos. 
+>- **Resultado:** Un conjunto de datos retrospectivos que proporcionan una visión detallada del clima y las condiciones meteorológicas pasadas.
+>**Modelo de Circulación General (GCM)**
+>- **Propósito:** Simular el comportamiento de la atmósfera y el clima para predecir el tiempo y el clima futuro, así como estudiar escenarios climáticos bajo diferentes condiciones.
+>- **Método:** Utiliza principios físicos y ecuaciones matemáticas que describen los procesos atmosféricos, oceánicos y terrestres. Los GCM no dependen de observaciones pasadas para su funcionamiento, aunque pueden usar datos históricos para la calibración y validación.
+>- **Resultado:** Proyecciones y simulaciones del comportamiento del clima en el futuro, basadas en diferentes escenarios y variables climáticas.
+
+En resumen, mientras que los productos de reanálisis buscan recrear el pasado con alta precisión mediante la integración de observaciones y modelos, los GCM están diseñados para predecir el futuro basándose en principios físicos y escenarios hipotéticos.
+
+¿Te gustaría profundizar más en alguno de estos temas?
+
+
+>Tarea:
+> - Entender y hacer un ejercicio práctico de como se utiliza la metodología GLUE.
