@@ -509,7 +509,8 @@ Entender las fuentes de incertidumbres de las proyecciones de cambio climático 
 >  
 >En resumen, mientras que los productos de reanálisis buscan recrear el pasado con alta precisión mediante la integración de observaciones y modelos, los GCM están diseñados para predecir el futuro basándose en principios físicos y escenarios hipotéticos.
 
-
+>Preguntas:
+> - Etiendo que la finalidad de los GCM es proyectar el clima para ventanas futuras de tiempo y que los productos de reanalisis están diseñados con la finalidad de representar el clima en tiempos pasados. Por lo tanto, me resulta mucho más coherente calibrar un modelo hidrologico con productos de reanalisis frente a GCM escalados para el periodo historico. Pero aún así me queda la duda ¿no es conveniente/aceptable/recomendable calibrar con un GCM escalado en periodo historico con datos observados? Entiendo que a lo mejor el problema puede ser que al escalar el GCM lo que estoy haciendo es ajustar sus estadísticos a nivel mensual con los estadisticos a nivel mensual de los datos observados, lo cual no indica que el GCM para un dia o mes particular me va a dar el dato de precipitación o temperatura exacta para cierto día o mes, entiendo que un producto de reanálisis si va a hacer eso (**preguntar esto igual**). Pero de todas formas, sería muy 'desfachatado' hacer una calibración con un GCM escalado?
 
 >Tarea:
 > - Entender y hacer un ejercicio práctico de como se utiliza la metodología GLUE.
