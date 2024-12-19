@@ -483,12 +483,16 @@ En R la **equifinalidad** se puede abordar con el paquete **hydroPSO**. Se puede
 Los productos de reanálisis podrían llegar a tener mejores resultados en el hemisferio norte frente al hemisferio sur debido a la baja densidad de medición en este último hemisferio.
 Recordar que los productos de reanálisis corresponden a simulaciones que son reconstrucciones de lo que ha ocurrido en base a la información observada disponible.
 
+Las incertidumbres se van a cuantificar con funciones de distribución acumulada de probabilidad. A partir de las observaciones de un grupo grande de modelos se va a evaluar que valores son más o menos probables (se ve la probabilidad de excedencia).
+La comunidad científica aborda las incertidumbres de los GCM por medio de un análisis probabilístico. 
 
+Se recomienda utilizar dos escenarios contrastantes para ver si hay diferencias significativas entre los dos escenarios (como por ejemplo, evaluar SSP2-4.5 y SSP5-8.5).
 
-Entender las fuentes de incertidumbres de las proyecciones de cambio climático y de los modelos hidrológicos nos permite poder identificar:
-1. Aquellas incertidumbres que podemos disminuir o acotar por medio de mayor información. 
-2. Aquellas que en realidad son parte de la naturaleza del fenómeno y tenemos que aprender a lidiar con ellas y presentar los resultados de maneras que sean útiles a pesar de estar ligadas a un desconocimiento o incertidumbre.
-
+Recomendaciones para presentar los datos de series de tiempo hidrológicas:
+1. Presentar datos en distintas agregaciones temporales (anual, mensual, estacional). Presentarlos junto a los datos observados.
+2. Tomar ventanas de tiempo, en lugar de mostrar todo el periodo.
+3. Los análisis de frecuencia de los datos climáticos presentarlo con histogramas, cuantiles, etc.
+4. Presentar test estadísticos de tendencias, aleatoriedad, entre otros.
 
 >Un **producto de reanálisis** es un conjunto de datos generados mediante modelos que combinan observaciones meteorológicas y climáticas con algoritmos estadísticos o dinámicos para crear una representación más completa y coherente de las condiciones atmosféricas pasadas. Estos productos son útiles para estudios climáticos, hidrológicos y para validar modelos atmosféricos.
 >**CR2MET** y **CHIRPS** son ejemplos de productos de reanálisis. 
@@ -509,8 +513,24 @@ Entender las fuentes de incertidumbres de las proyecciones de cambio climático 
 >  
 >En resumen, mientras que los productos de reanálisis buscan recrear el pasado con alta precisión mediante la integración de observaciones y modelos, los GCM están diseñados para predecir el futuro basándose en principios físicos y escenarios hipotéticos.
 
+>**Anomalía**
+>Corresponde a la diferencia entre la temperatura observada y una referencia promedio o estándar. Por ejemplo, cuando se menciona una anomalía de temperatura en un informe climático, generalmente se compara la temperatura actual con el promedio de un período específico en el pasado.
+
+Entender las fuentes de incertidumbres de las proyecciones de cambio climático y de los modelos hidrológicos nos permite poder identificar:
+1. Aquellas incertidumbres que podemos disminuir o acotar por medio de mayor información. 
+2. Aquellas que en realidad son parte de la naturaleza del fenómeno y tenemos que aprender a lidiar con ellas y presentar los resultados de maneras que sean útiles a pesar de estar ligadas a un desconocimiento o incertidumbre.
+
+>NOTAS IMPORTANTES:
+> - hydroTSM es un paquete que permite agregar datos a escala estacional y anual de manera muy sencilla. Permite graficar de manera sencilla en distintas agregaciones temporales y puede hace climogramas.
+
 >Preguntas:
 > - Etiendo que la finalidad de los GCM es proyectar el clima para ventanas futuras de tiempo y que los productos de reanalisis están diseñados con la finalidad de representar el clima en tiempos pasados. Por lo tanto, me resulta mucho más coherente calibrar un modelo hidrologico con productos de reanalisis frente a GCM escalados para el periodo historico. Pero aún así me queda la duda ¿no es conveniente/aceptable/recomendable calibrar con un GCM escalado en periodo historico con datos observados? Entiendo que a lo mejor el problema puede ser que al escalar el GCM lo que estoy haciendo es ajustar sus estadísticos a nivel mensual con los estadisticos a nivel mensual de los datos observados, lo cual no indica que el GCM para un dia o mes particular me va a dar el dato de precipitación o temperatura exacta para cierto día o mes, entiendo que un producto de reanálisis si va a hacer eso (**preguntar esto igual**). Pero de todas formas, sería muy 'desfachatado' hacer una calibración con un GCM escalado?
 
 >Tarea:
 > - Entender y hacer un ejercicio práctico de como se utiliza la metodología GLUE.
+> - RegCM4 es un modelo regional ocupado en Chile. Averigua más sobre este modelo.
+> - Buscar artículos respecto a generación estocástica como alternativa a los métodos de downscaling estadístico. Buscar si tendría algo en los archivos del diplomado.
+
+# Clase 10.2
+
+Aca quedé (19-dic). Antes de continuar hacer el ejercicio práctico de la clase 10.1s
