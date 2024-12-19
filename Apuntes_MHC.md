@@ -506,6 +506,7 @@ Entender las fuentes de incertidumbres de las proyecciones de cambio climático 
 >- **Propósito:** Simular el comportamiento de la atmósfera y el clima para predecir el tiempo y el clima futuro, así como estudiar escenarios climáticos bajo diferentes condiciones.
 >- **Método:** Utiliza principios físicos y ecuaciones matemáticas que describen los procesos atmosféricos, oceánicos y terrestres. Los GCM no dependen de observaciones pasadas para su funcionamiento, aunque pueden usar datos históricos para la calibración y validación.
 >- **Resultado:** Proyecciones y simulaciones del comportamiento del clima en el futuro, basadas en diferentes escenarios y variables climáticas.  
+>  
 >En resumen, mientras que los productos de reanálisis buscan recrear el pasado con alta precisión mediante la integración de observaciones y modelos, los GCM están diseñados para predecir el futuro basándose en principios físicos y escenarios hipotéticos.
 
 
