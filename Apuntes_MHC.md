@@ -397,9 +397,26 @@ Delta Change es recomendable para ocupar porque es muy sencillo, no es un métod
 
 ## Clase 9.5
 
-Al momento de aplicar Quantile Mapping (downscaling) es común asumir una distribución Gamma para la precipitación y una distribución Normal para la temperatura.
+Al momento de aplicar Quantile Mapping (downscaling) es común asumir una distribución Gamma para la precipitación y una distribución Normal para la temperatura. La distribución Gumbel también puede ser una buena opción para el caso de la temperatura, en caso de que los datos originales presenten alguna asimetría.
 
-Para la función Gamma se deben determinar los valores de $$\alpha$$ y $$\beta$$. Ambos parámetros se calculan con la desviación estándar y el promedio de cada mes. **Para cada mes uno va a tener un $$\alpha$$ y un $$\beta$$.** 
+En las siguientes dos imágenes se puede ver un ejemplo de Quantile Mapping que ha resultado **muy bien tanto para el promedio como para la desviación estándar**, lo que indica que la distribución Gamma escogida inicialemnte fué una decisión correcta.
+
+![Ejemplo BC muy bien](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_muybien.jpg)
+![Ejemplo BC muy bien 2](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_muybien2.jpg)
+
+En cambio, en las siguientes dos imágenes se puede ver como la distribución Normal elegida para realizar el Quantile Mapping a los datos de temperatura no fue lo más acertado. **Como se puede ver, para el caso del promedio la corrección de sesgo ha resultado ser buena, pero se identifican problemas para el caso de la desviación estándar.** En este caso pudo haber sido mejor elegir la distribución Gumbel en lugar de la Normal.
+
+![Ejemplo BC bien](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_bien.jpg)
+![Ejemplo BC problemas](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_problemas.jpg)
+
+Para ambas distribuciones (Normal y Gamma) se deben obtener parámetros ($$\mu$$, $$\sigma$$, $$\alpha$$ y $$\beta$$), **los cuales deben ser calculados para cada mes**. Es decir, se tendrá un set de parámetros que representen a todos los eneros, todos los febreros, todos los marzos, etc.
+
+Se obtienen las distribuciones correspondientes a cada mes tanto para los datos observados como para cada GCM al que se le quiere aplicar Quantile Mapping.
+
+En resumen, se va a tener que cada mes de cada set de datos que estamos utilizando (datos observados y datos de los GCM) va a tener su propia distribución.
+
+>NOTAS IMPORTANTES:
+> - Si al aplicar Quantile Mapping resulta que el promedio y la desviación estándar de los datos corregidos no se ajustan al promedio y desviación estándar de los datos observados, se puede deber a que la distribución escogida no es la óptima. Esto se debe a que los datos originales en realidad no se adaptan a la distribución escogida, por lo que una solución sería cambiar la distribución.
 
 >TAREAS:
 > - En esta clase Cristian Chadwick habla respecto a ajustar distribuciones por el método de máxima verosimilitud y por método de los momentos. Averigua a que corresponden estos dos métodos. La distribución gamma que se ve en clases está ajustada por el método de los momentos (se calcula un alfa y un beta).
