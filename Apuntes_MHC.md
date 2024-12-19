@@ -340,7 +340,7 @@ La distribución Gamma es una distribución estrictamente no negativa.
 
 - Consiste en extraer las tasas de cambio de variables climáticas del GCM y generar clima con dichas tasas de cambio.
 
-$$\Delta Precipitaciones (%)$$
+$$\Delta \text{Precipitaciones (\%)}$$
 $$\Delta Temperaturas (°C)$$ 
 
 ![Delta Change](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Delta%20Change.jpg)
@@ -409,6 +409,8 @@ En cambio, en las siguientes dos imágenes se puede ver como la distribución No
 ![Ejemplo BC bien](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_bien.jpg)
 ![Ejemplo BC problemas](https://github.com/felipegarciaesp/Apuntes_MHC/blob/main/Ejemplo_BC_problemas.jpg)
 
+En caso de que nos pasara que la corrección de sesgo presenta problemas, habría que hacer un **test de bondad de ajuste y probar con otra distribución.**
+
 Para ambas distribuciones (Normal y Gamma) se deben obtener parámetros ($$\mu$$, $$\sigma$$, $$\alpha$$ y $$\beta$$), **los cuales deben ser calculados para cada mes**. Es decir, se tendrá un set de parámetros que representen a todos los eneros, todos los febreros, todos los marzos, etc.
 
 Se obtienen las distribuciones correspondientes a cada mes tanto para los datos observados como para cada GCM al que se le quiere aplicar Quantile Mapping.
@@ -417,6 +419,11 @@ En resumen, se va a tener que cada mes de cada set de datos que estamos utilizan
 
 >NOTAS IMPORTANTES:
 > - Si al aplicar Quantile Mapping resulta que el promedio y la desviación estándar de los datos corregidos no se ajustan al promedio y desviación estándar de los datos observados, se puede deber a que la distribución escogida no es la óptima. Esto se debe a que los datos originales en realidad no se adaptan a la distribución escogida, por lo que una solución sería cambiar la distribución.
+> - El Delta Change funciona super bien y es recomendable usarlo si uno tiene que utilizar un solo método.
+
+>Preguntas:
+> - Como puedo identificar cuál es el método de escalamiento apropiado para utilizar? Como identificar si debo utilizar QM, QDM, UQM, MBCn, SDM, etc.? Digamos, de que depende?
 
 >TAREAS:
 > - En esta clase Cristian Chadwick habla respecto a ajustar distribuciones por el método de máxima verosimilitud y por método de los momentos. Averigua a que corresponden estos dos métodos. La distribución gamma que se ve en clases está ajustada por el método de los momentos (se calcula un alfa y un beta).
+> - Averiguar sobre el método Scale Distribution Mapping. Cristian Cahdwick ha indicado que entender las ecuaciones es un dolor de cabeza.
