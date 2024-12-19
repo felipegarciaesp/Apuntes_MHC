@@ -496,10 +496,12 @@ Entender las fuentes de incertidumbres de las proyecciones de cambio climático 
 >- **CHIRPS** (Climate Hazards Group InfraRed Precipitation with Station data) es otro conjunto de datos de precipitación que combina imágenes de satélites con datos de estaciones meteorológicas para proporcionar una cobertura global de precipitación.
 
 >La diferencia principal entre un producto de reanálisis y un modelo de Circulación General (GCM, por sus siglas en inglés) radica en su propósito y en cómo se construyen:  
+> 
 >**Producto de Reanálisis**
 >- **Propósito:** Crear una representación coherente y completa del estado de la atmósfera en el pasado usando tanto observaciones como modelos.
 >- **Método:** Utiliza datos históricos de observaciones (satélites, estaciones meteorológicas, globos sonda, etc.) y los integra con modelos numéricos a través de un proceso llamado asimilación de datos. 
 >- **Resultado:** Un conjunto de datos retrospectivos que proporcionan una visión detallada del clima y las condiciones meteorológicas pasadas.  
+> 
 >**Modelo de Circulación General (GCM)**
 >- **Propósito:** Simular el comportamiento de la atmósfera y el clima para predecir el tiempo y el clima futuro, así como estudiar escenarios climáticos bajo diferentes condiciones.
 >- **Método:** Utiliza principios físicos y ecuaciones matemáticas que describen los procesos atmosféricos, oceánicos y terrestres. Los GCM no dependen de observaciones pasadas para su funcionamiento, aunque pueden usar datos históricos para la calibración y validación.
