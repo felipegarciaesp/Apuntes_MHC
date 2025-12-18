@@ -49,7 +49,7 @@ Samsung ofrece diferentes líneas de dispositivos Galaxy para satisfacer distint
 ### Características principales:
 - **Precio:** Gama ultra-premium, el más costoso de la línea
 - **Procesador:** El mejor procesador disponible con la mejor gestión térmica
-- **Cámara:** Sistema de cámaras más avanzado con múltiples lentes, zoom óptico superior (hasta 10x o más), sensores de mayor resolución
+- **Cámara:** Sistema de cámaras más avanzado con múltiples lentes, zoom óptico superior y periscopio, sensores de mayor resolución
 - **Pantalla:** Pantalla más grande y de mejor calidad, con tecnología AMOLED de última generación, bordes curvos
 - **Materiales:** Construcción ultra-premium con materiales de la más alta calidad
 - **Batería:** La mayor capacidad de batería de la serie
@@ -76,7 +76,7 @@ Samsung ofrece diferentes líneas de dispositivos Galaxy para satisfacer distint
 | **Procesador** | Generación anterior o reducido | Flagship actual | Flagship actual (mejor optimizado) |
 | **Cámaras** | Buenas | Muy buenas | Excelentes (mejor zoom) |
 | **Materiales** | Plástico/Metal | Premium (Metal/Vidrio) | Ultra-premium |
-| **Batería** | ~4500 mAh | ~4800-5000 mAh | ~5000-5500 mAh |
+| **Batería** | Mayor | Grande | Muy grande |
 | **S Pen** | ❌ | ❌ | ✅ |
 | **RAM** | 6-8 GB | 8-12 GB | 12-16 GB |
 
